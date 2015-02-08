@@ -264,6 +264,7 @@ function getHill(loc) {
         }
     });
 
+    console.log(max);
     calcRoute(max.location, min.location);
 
     // curLat = loc.k-0.05;
