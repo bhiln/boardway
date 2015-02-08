@@ -206,14 +206,20 @@ function getHill(lat, lon) {
     var max = 0;
     var min = 1000000;
 
-    // Create a LocationElevationRequest object using the array's one value
-    var positionalRequest = {
-        'locations': [curLat, curLong]
-    }
+    
 
-    // Initiate the location request
-    elevator.getElevationForLocations(positionalRequest, function(results, status) {
-        console.log(results);
+    for (var i = 0; i < 100; i++){
+        // Create a LocationElevationRequest object using the array's one value
+        var positionalRequest = {
+            'locations': [curLat, curLong]
+        }
+        // Initiate the location request
+        elevator.getElevationForLocations(positionalRequest, function(results, status) {
+            console.log(results);
+        });
+
+        curLat = curLat + 0.001;
+    }
     //     if (status == google.maps.ElevationStatus.OK) {
 
     //       // Retrieve the first result
@@ -229,7 +235,6 @@ function getHill(lat, lon) {
     //     } else {
     //       alert("Elevation service failed due to: " + status);
     //     }
-    });
 
 
     // elevator.
