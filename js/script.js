@@ -225,7 +225,7 @@ function getHill(loc) {
         // Initiate the location request
         elevator.getElevationForLocations(positionalRequest, function(results, status) {
             
-            console.log(status);
+            console.log(results);
             allResults.push(results);
         });
         curLat = loc.k-0.05;
