@@ -157,6 +157,11 @@ function plotElevation(results, status) {
     chart.draw(data, {
         height: 100,
         width: 150,
+        vAxis: {
+            gridlines: {
+                color: 'transparent'
+            }
+        },
         legend: 'none',
         curveType: 'function',
         titleY: 'Elevation (m)'
