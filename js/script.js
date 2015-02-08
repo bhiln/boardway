@@ -205,12 +205,13 @@ function getHill(lat, lon) {
     var curLong = lon-0.05;
     var max = 0;
     var min = 1000000;
+    var positionalRequest;
 
     
 
     for (var i = 0; i < 100; i++){
         // Create a LocationElevationRequest object using the array's one value
-        var positionalRequest = {
+        positionalRequest = {
             'locations': [curLat, curLong]
         }
         // Initiate the location request
@@ -218,8 +219,8 @@ function getHill(lat, lon) {
             console.log(results);
         });
 
-        results = null;
-        status = null;
+        // results = null;
+        // status = null;
         //curLat = curLat + 0.01;
     }
     //     if (status == google.maps.ElevationStatus.OK) {
