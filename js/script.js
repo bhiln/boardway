@@ -123,14 +123,14 @@ function plotElevation(results, status) {
     document.getElementById("elevation-max").textContent    = max;
     document.getElementById("elevation-min").textContent    = min;
 
-    // Display a polyline of the elevation path.
-    var pathOptions = {
-        path: elevationPath,
-        strokeColor: '#0000CC',
-        opacity: 0.4,
-        map: map
-    }
-    polyline = new google.maps.Polyline(pathOptions);
+    // // Display a polyline of the elevation path.
+    // var pathOptions = {
+    //     path: elevationPath,
+    //     strokeColor: '#0000CC',
+    //     opacity: 0.4,
+    //     map: map
+    // }
+    // polyline = new google.maps.Polyline(pathOptions);
 
     // Extract the data from which to populate the chart.
     // Because the samples are equidistant, the 'Sample'
