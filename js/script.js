@@ -237,7 +237,7 @@ function getHill(loc) {
     }
 
     console.log("HERE ARE THE RESULTS");
-    //console.log(allResults);
+    console.log(allResults);
 
     // if (status == google.maps.ElevationStatus.OK) {
 
