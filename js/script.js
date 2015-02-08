@@ -39,7 +39,7 @@ if (navigator.geolocation) {
             return;
         }
         // Log that this is the initial position.
-        console.log("Initial Position Found");
+        //console.log("Initial Position Found");
         myLoc1 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         myEnd1 = new google.maps.LatLng(position.coords.latitude + 0.05, position.coords.longitude + 0.05);
         myLoc2 = new google.maps.LatLng(position.coords.latitude - 0.02, position.coords.longitude + 0.02);
@@ -47,7 +47,7 @@ if (navigator.geolocation) {
 
     },
     function (error) {
-        console.log("Something went wrong: ", error);
+        //console.log("Something went wrong: ", error);
     },
     {
         timeout: (5 * 1000),
@@ -107,7 +107,7 @@ function plotElevation(results, status) {
         return;
     }
     var elevations = results;
-    console.log(elevations);
+    //console.log(elevations);
 
     // Extract the elevation samples from the returned results
     // and store them in an array of LatLngs.
@@ -123,7 +123,7 @@ function plotElevation(results, status) {
     }
     min = Math.floor(min);
     max = Math.floor(max);
-    console.log(min + " " + max);
+    //console.log(min + " " + max);
     document.getElementById("elevation-change").textContent = (max - min);
     document.getElementById("elevation-max").textContent    = max;
     document.getElementById("elevation-min").textContent    = min;
@@ -137,7 +137,7 @@ function plotElevation(results, status) {
             strokeWeight: 10,
             map: map
         }
-        console.log(pathOptions);
+        //console.log(pathOptions);
         polyline = new google.maps.Polyline(pathOptions);
     }
     // Extract the data from which to populate the chart.
@@ -190,7 +190,7 @@ function calcRoute(lat, lon) {
             directionsDisplay.setDirections(result);
             //for each (point in result.routes[0][)
             drawPath(result.routes[0].overview_path);
-            console.log(result);
+            //console.log(result);
             getHill(myLoc1);
             document.getElementById("location-start").textContent   = result.routes[0].legs[0].start_address;
             document.getElementById("location-end").textContent     = result.routes[0].legs[0].end_address;
@@ -209,7 +209,7 @@ function getHill(loc) {
     var latslongs = [];
     var allResults = [];
 
-    console.log("incoming values: " + curLat + " " + curLong);
+    //console.log("incoming values: " + curLat + " " + curLong);
     for (var i = 0; i < 15; i++){
         for (var j = 0; j < 15; j++){
             // Create a LocationElevationRequest object using the array's one value
@@ -218,7 +218,7 @@ function getHill(loc) {
 
             curLat = curLat + 0.001;
         }
-        //console.log(latslongs);
+        ////console.log(latslongs);
         positionalRequest = {
             'locations': latslongs
         }
@@ -237,7 +237,7 @@ function getHill(loc) {
     }
 
     console.log("HERE ARE THE RESULTS");
-    console.log(allResults);
+    //console.log(allResults);
 
     // if (status == google.maps.ElevationStatus.OK) {
 
