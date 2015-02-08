@@ -149,11 +149,11 @@ function plotElevation(results, status) {
       legend: { position: 'bottom' }
     };
 
-    var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+    //var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
 
-    // // Draw the chart using the data within its DIV.
-    // document.getElementById('elevation_chart').style.display = 'block';
+    // Draw the chart using the data within its DIV.
+    document.getElementById('elevation_chart').style.display = 'line';
     chart.draw(data, {
         height: 150,
         legend: 'none',
