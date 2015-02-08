@@ -82,7 +82,8 @@ function initialize() {
 function drawPath(path) {
 
     // Create a new chart in the elevation_chart DIV.
-    chart = new google.visualization.ColumnChart(document.getElementById('elevation_chart'));
+    //chart = new google.visualization.ColumnChart(document.getElementById('elevation_chart'));
+    chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
 
     // Create a PathElevationRequest object using this array.
     // Ask for 256 samples along that path.
@@ -149,11 +150,11 @@ function plotElevation(results, status) {
       legend: { position: 'bottom' }
     };
 
-    //var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+    
 
 
     // Draw the chart using the data within its DIV.
-    document.getElementById('elevation_chart').style.display = 'line';
+    //document.getElementById('elevation_chart').style.display = 'line';
     chart.draw(data, {
         height: 150,
         legend: 'none',
