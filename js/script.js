@@ -221,7 +221,7 @@ function getHill(loc) {
     }
     console.log(latslongs);
     positionalRequest = {
-        'locations': [curLat, curLong]
+        'locations': latslongs
     }
     // Initiate the location request
     elevator.getElevationForLocations(positionalRequest, function(results, status) {
