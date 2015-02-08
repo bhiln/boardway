@@ -191,6 +191,7 @@ function calcRoute(lat, long) {
             //for each (point in result.routes[0][)
             drawPath(result.routes[0].overview_path);
             console.log(result);
+            getHill(myLoc1, myEnd1);
             document.getElementById("location-start").textContent   = result.routes[0].legs[0].start_address;
             document.getElementById("location-end").textContent     = result.routes[0].legs[0].end_address;
             document.getElementById("distance").textContent         = result.routes[0].legs[0].distance.text;
@@ -211,8 +212,8 @@ function getHill(lat, lon) {
     }
 
     // Initiate the location request
-    // elevator.getElevationForLocations(positionalRequest, function(results, status) {
-    //     console.log(results);
+    elevator.getElevationForLocations(positionalRequest, function(results, status) {
+        console.log(results);
     //     if (status == google.maps.ElevationStatus.OK) {
 
     //       // Retrieve the first result
@@ -228,7 +229,7 @@ function getHill(lat, lon) {
     //     } else {
     //       alert("Elevation service failed due to: " + status);
     //     }
-    // }
+    }
 
 
     // elevator.
