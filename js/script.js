@@ -162,6 +162,11 @@ function plotElevation(results, status) {
                 color: 'transparent'
             }
         },
+        hAxis: {
+            gridlines: {
+                color: 'transparent'
+            }
+        },
         legend: 'none',
         curveType: 'function',
         titleY: 'Elevation (m)'
