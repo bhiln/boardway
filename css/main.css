@@ -3,3 +3,9 @@ html, body, #map-canvas {
     margin: 0px;
     padding: 0px;
 }
+
+.data {
+	font-weight: 700;
+	font-size: 60px;
+	color: blue;
+}

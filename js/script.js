@@ -161,12 +161,12 @@ function calcRoute(lat, long) {
             //for each (point in result.routes[0][)
             drawPath(result.routes[0].overview_path);
             console.log(result);
-            document.getElementById("routeInfo").textContent = "Start Location: " + result.routes[0].legs[0].start_address
-                                                             + " End location: " + result.routes[0].legs[0].end_address
-                                                             + " Distance: " + result.routes[0].legs[0].distance.text
-                                                             + " Change in elevation: " + (max - min)
-                                                             + " Max: " + max
-                                                             + " Min: " + min;
+            document.getElementById("location-start").textContent   = "Start Location: " + result.routes[0].legs[0].start_address;
+            document.getElementById("location-end").textContent     = "End location: " + result.routes[0].legs[0].end_address;
+            document.getElementById("distance").textContent         = "Distance: " + result.routes[0].legs[0].distance.text;
+            document.getElementById("elevation-change").textContent = "Change in elevation: " + (max - min);
+            document.getElementById("elevation-max").textContent    = "Max: " + max;
+            document.getElementById("elevation-min").textContent    = "Min: " + min;
         }
     });
 }
