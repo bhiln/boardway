@@ -154,7 +154,7 @@ function plotElevation(results, status) {
     // }
 
     // Display a polyline of the elevation path.
-    for (var i = 0; i < 10; i+2){
+    for (var i = 0; i < 10; i++){
         var pathOptions = {
             path: [elevationPath[i], elevationPath[i+1]],
             strokeColor: 'hsl(' + (50-(50-0)*((elevations[0].elevation-min)/(max-min))) + ',80%,50%)',
