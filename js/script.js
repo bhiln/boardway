@@ -131,27 +131,27 @@ function plotElevation(results, status) {
     var test = "hsl(10+(40-10)*((elevationPath[i].elevation-min)/(max-min)),80%,100%)";
     console.log(test);
 
-    var pathOptions = {
-        path: [elevationPath[0], elevationPath[1]],
-        strokeColor: 'hsl(' + (50-(50-0)*((elevations[0].elevation-min)/(max-min))) + ',80%,50%)',
-        opacity: 1,
-        strokeWeight: 10,
-        map: map
-    }
-    console.log(pathOptions);
-    polyline = new google.maps.Polyline(pathOptions);
+    // var pathOptions = {
+    //     path: [elevationPath[0], elevationPath[1]],
+    //     strokeColor: 'hsl(' + (50-(50-0)*((elevations[0].elevation-min)/(max-min))) + ',80%,50%)',
+    //     opacity: 1,
+    //     strokeWeight: 10,
+    //     map: map
+    // }
+    // console.log(pathOptions);
+    // polyline = new google.maps.Polyline(pathOptions);
 
-    for each (point in elevations) {
-        var pathOptions = {
-            path: [elevationPath[0], elevationPath[1]],
-            strokeColor: 'hsl(' + (50-(50-0)*((elevations[0].elevation-min)/(max-min))) + ',80%,50%)',
-            opacity: 1,
-            strokeWeight: 10,
-            map: map
-        }
-        console.log(pathOptions);
-        polyline = new google.maps.Polyline(pathOptions);
-    }
+    // for each (point in elevations) {
+    //     var pathOptions = {
+    //         path: [elevationPath[0], elevationPath[1]],
+    //         strokeColor: 'hsl(' + (50-(50-0)*((elevations[0].elevation-min)/(max-min))) + ',80%,50%)',
+    //         opacity: 1,
+    //         strokeWeight: 10,
+    //         map: map
+    //     }
+    //     console.log(pathOptions);
+    //     polyline = new google.maps.Polyline(pathOptions);
+    // }
 
     // Display a polyline of the elevation path.
     for (var i = 0; i < 10; i+2){
