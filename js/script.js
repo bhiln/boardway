@@ -258,9 +258,9 @@ function getHill(loc) {
         max = 0;
         for (var i = 0; i < results.length; i++) {
             if (elevations[i].elevation < min)
-                min = elevations[i].elevation;
+                min = elevations[i];
             if (elevations[i].elevation > max)
-                max = elevations[i].elevation;
+                max = elevations[i];
         }
     });
 
