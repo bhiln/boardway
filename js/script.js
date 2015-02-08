@@ -158,6 +158,7 @@ function plotElevation(results, status) {
     chart.draw(data, {
         height: 150,
         legend: 'none',
+        curveType: 'function',
         titleY: 'Elevation (m)'
     });
 }
