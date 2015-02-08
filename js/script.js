@@ -206,7 +206,7 @@ function getHill(lat, lon) {
     var max = 0;
     var min = 1000000;
     var positionalRequest;
-    var latslongs[];
+    var latslongs = [];
 
     
     for (car i = 0; i < 100; i++){
