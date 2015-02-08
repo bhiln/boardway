@@ -45,14 +45,6 @@ if (navigator.geolocation) {
         myLoc2 = new google.maps.LatLng(position.coords.latitude - 0.02, position.coords.longitude + 0.02);
         myEnd2 = new google.maps.LatLng(position.coords.latitude - 0.04, position.coords.longitude + 0.03);
 
-        var pathOptions = {
-            path: [myLoc1, myEnd1],
-            opacity: 1,
-            strokeWeight: 20,
-            map: map
-        }
-        polyline = new google.maps.Polyline(pathOptions);
-
     },
     function (error) {
         //console.log("Something went wrong: ", error);
@@ -146,10 +138,9 @@ function plotElevation(results, status) {
             map: map
         }
         //console.log(pathOptions);
-        polyline.setPath(pathOptions);
+        polyline = new google.maps.Polyline(pathOptions);
     }
 
-    window.setTimeout(function(){},1000);
     // Display a polyline of the elevation path.
     for (var i = 0; i < elevations.length-1; i++){
         var pathOptions = {
@@ -160,7 +151,7 @@ function plotElevation(results, status) {
             map: map
         }
         //console.log(pathOptions);
-        polyline.setPath(pathOptions);
+        polyline = new google.maps.Polyline(pathOptions);
     }
     // Extract the data from which to populate the chart.
     // Because the samples are equidistant, the 'Sample'
