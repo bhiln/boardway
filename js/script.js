@@ -211,24 +211,25 @@ function getHill(lat, lon) {
     }
 
     // Initiate the location request
-    elevator.getElevationForLocations(positionalRequest, function(results, status) {
-        console.log(results);
-        if (status == google.maps.ElevationStatus.OK) {
+    // elevator.getElevationForLocations(positionalRequest, function(results, status) {
+    //     console.log(results);
+    //     if (status == google.maps.ElevationStatus.OK) {
 
-          // Retrieve the first result
-          if (results[0]) {
+    //       // Retrieve the first result
+    //       if (results[0]) {
 
-            // Open an info window indicating the elevation at the clicked position
-            infowindow.setContent("The elevation at this point is " + results[0].elevation + " meters.");
-            infowindow.setPosition(clickedLocation);
-            infowindow.open(map);
-          } else {
-            alert("No results found");
-          }
-        } else {
-          alert("Elevation service failed due to: " + status);
-        }
-    }
+    //         // Open an info window indicating the elevation at the clicked position
+    //         infowindow.setContent("The elevation at this point is " + results[0].elevation + " meters.");
+    //         infowindow.setPosition(clickedLocation);
+    //         infowindow.open(map);
+    //       } else {
+    //         alert("No results found");
+    //       }
+    //     } else {
+    //       alert("Elevation service failed due to: " + status);
+    //     }
+    // }
+
 
     // elevator.
     // for (int i = 0; i < 100; i++){
