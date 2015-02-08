@@ -76,7 +76,7 @@ function initialize() {
 
     // Draw the path, using the Visualization API and the Elevation service.
     //drawPath(myLoc1, myLoc1);
-    calcRoute(myLoc1, myEnd1);
+    getHill(myLoc1);
 }
 
 function drawPath(path) {
@@ -185,11 +185,10 @@ function calcRoute(start, end) {
     };
     directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
-            //directionsDisplay.setDirections(result);
+            directionsDisplay.setDirections(result);
             //for each (point in result.routes[0][)
-            //drawPath(result.routes[0].overview_path);
+            drawPath(result.routes[0].overview_path);
             //console.log(result);
-            getHill(myLoc1);
             document.getElementById("location-start").textContent   = result.routes[0].legs[0].start_address;
             document.getElementById("location-end").textContent     = result.routes[0].legs[0].end_address;
             document.getElementById("distance").textContent         = result.routes[0].legs[0].distance.text;
