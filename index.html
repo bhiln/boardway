@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Showing elevation along a path</title>
+    <title>Boardway</title>
 
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
@@ -20,17 +20,18 @@
         <div id="elevation_chart"></div>
     </div>
 
+    <div class="route">
+        <!-- <img src="img/streetview.png"> -->
+        <div class="route-data">
+            <h2><span id="location-start">[Start Location]</span> to <span id="location-end">[End Location]</h2>
+            <p class="data"><span id="distance">[Distance]</span></p>
+            <p class="data">&Delta; <span id="elevation-change">[Elevation Change]</span></p>
+            <p class="data">Max: <span id="elevation-max">[Max Elevation]</span>, Min: <span id="elevation-min">[Min Elevation]</span></p>
+        </div>
+    </div>
+
     <button onclick="calcRoute(myLoc1, myEnd1)">Route 1</button>
     <button onclick="calcRoute(myLoc2, myEnd2)">Route 2</button>
-
-    <div class="route-info">
-        <p class="data" id="location-start"></p>
-        <p class="data" id="location-end"></p>
-        <p class="data" id="distance"></p>
-        <p class="data" id="elevation-change"></p>
-        <p class="data" id="elevation-max"></p>
-        <p class="data" id="elevation-min"></p>
-    </div>
 
 </body>
 
