@@ -204,11 +204,11 @@ function getHill(lat, lon) {
     var curLat = lat-0.05;
     var curLong = lon-0.05;
     var max = 0;
-    //var min = 
+    var min = 1000000;
 
     // Create a LocationElevationRequest object using the array's one value
     var positionalRequest = {
-        'locations': [lat, lon]
+        'locations': [curLat, curLong]
     }
 
     // Initiate the location request
