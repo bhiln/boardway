@@ -209,7 +209,7 @@ function getHill(lat, lon) {
     var latslongs = [];
 
     
-    for (car i = 0; i < 100; i++){
+    for (var i = 0; i < 100; i++){
         for (var j = 0; j < 100; j++){
             // Create a LocationElevationRequest object using the array's one value
             
