@@ -136,12 +136,12 @@ function plotElevation(results, status) {
     // Because the samples are equidistant, the 'Sample'
     // column here does double duty as distance along the
     // X axis.
-    // var data = new google.visualization.DataTable();
-    // data.addColumn('string', 'Sample');
-    // data.addColumn('number', 'Elevation');
-    // for (var i = 0; i < results.length; i++) {
-    //     data.addRow(['', elevations[i].elevation]);
-    // }
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Sample');
+    data.addColumn('number', 'Elevation');
+    for (var i = 0; i < results.length; i++) {
+        data.addRow(['', elevations[i].elevation]);
+    }
 
     var options = {
       title: 'Company Performance',
@@ -149,14 +149,11 @@ function plotElevation(results, status) {
       legend: { position: 'bottom' }
     };
 
-
-    var data = google.visualization.arrayToDataTable(elevations);
     var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-    chart.draw(data, options);
 
 
-    // Draw the chart using the data within its DIV.
-    document.getElementById('elevation_chart').style.display = 'block';
+    // // Draw the chart using the data within its DIV.
+    // document.getElementById('elevation_chart').style.display = 'block';
     chart.draw(data, {
         height: 150,
         legend: 'none',
