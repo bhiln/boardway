@@ -133,7 +133,7 @@ function plotElevation(results, status) {
         var pathOptions = {
             path: [elevationPath[i], elevationPath[i+1]],
             strokeColor: 'hsl(' + (50-(50-0)*((elevations[i].elevation-min)/(max-min))) + ',80%,50%)',
-            opacity: .8,
+            opacity: .4,
             strokeWeight: 15,
             map: map
         }
