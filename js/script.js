@@ -207,7 +207,7 @@ function getHill(loc) {
     var min = 1000000;
     var positionalRequest;
     var latslongs = [];
-    var allResults = [];
+    var allResults = [loc];
 
     //console.log("incoming values: " + curLat + " " + curLong);
     for (var i = 0; i < 15; i++){
