@@ -159,7 +159,8 @@ function plotElevation(results, status) {
         height: 150,
         legend: 'none',
         curveType: 'function',
-        titleY: 'Elevation (m)'
+        titleY: 'Elevation (m)',
+        vAxis.gridlines.color = 'transparent'
     });
 }
 
