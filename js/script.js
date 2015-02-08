@@ -230,7 +230,7 @@ function getHill(loc) {
         });
         curLat = loc.k-0.05;
         curLong = curLong + 0.001;
-        latslongs = null;
+        latslongs = [];
     }
 
     console.log("HERE ARE THE RESULTS");
