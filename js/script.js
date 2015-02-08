@@ -213,7 +213,7 @@ function getHill(lat, lon) {
 
     // Initiate the location request
     elevator.getElevationForLocations(positionalRequest, function(results, status) {
-        console.log(results);
+        //console.log(results);
         // if (results[0].elevation > hillMax)
         //     hillMax = results[0].elevation;
         // if (results[0].elevation < hillMin)
