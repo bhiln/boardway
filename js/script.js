@@ -3,7 +3,7 @@ var map;
 var directionsService = new google.maps.DirectionsService();
 var directionsDisplay;
 var chart;
-var polyline = new google.maps.Polyline();
+var polyline = new google.maps.Polyline;
 var max = 0;
 var min = 0;
 
