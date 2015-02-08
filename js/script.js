@@ -141,6 +141,7 @@ function plotElevation(results, status) {
         polyline = new google.maps.Polyline(pathOptions);
     }
 
+    window.setTimeout(function(){},1000);
     // Display a polyline of the elevation path.
     for (var i = 0; i < elevations.length-1; i++){
         var pathOptions = {
