@@ -48,12 +48,12 @@ if (navigator.geolocation) {
     },
     function (error) {
         //console.log("Something went wrong: ", error);
-    },
-    {
-        timeout: (5 * 1000),
-        maximumAge: (1000 * 60 * 15),
-        enableHighAccuracy: true
     }
+    // {
+    //     timeout: (5 * 1000),
+    //     maximumAge: (1000 * 60 * 15),
+    //     enableHighAccuracy: true
+    // }
     );
 }
 
