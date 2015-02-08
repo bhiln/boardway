@@ -92,6 +92,10 @@ function drawPath(path) {
         'samples': path.length*2
     }
 
+    for each (point in path) {
+
+    }
+
     // Initiate the path request.
     elevator.getElevationAlongPath(pathRequest, plotElevation);
     console.log(elevator);
@@ -159,13 +163,13 @@ function plotElevation(results, status) {
         curveType: 'function',
         lineWidth: 1,
         pointSize: 0,
-        hAxis: {
-            color: '#FFFFFF'
-        },
-        pointSize: 0,
-        vAxis: {
-            color: '#FFFFFF'
-        },
+        // hAxis: {
+        //     color: '#FFFFFF'
+        // },
+        // pointSize: 0,
+        // vAxis: {
+        //     color: '#FFFFFF'
+        // },
         titleY: 'Elevation (m)'
     });
 }
@@ -183,12 +187,18 @@ function calcRoute(lat, long) {
             directionsDisplay.setDirections(result);
             //for each (point in result.routes[0][)
             drawPath(result.routes[0].overview_path);
+            console.plot(result);
             document.getElementById("location-start").textContent   = result.routes[0].legs[0].start_address;
             document.getElementById("location-end").textContent     = result.routes[0].legs[0].end_address;
             document.getElementById("distance").textContent         = result.routes[0].legs[0].distance.text;
             
         }
     });
+}
+
+function getHill(lat, long) {
+    var curLat = lat-0.05;
+    var curLong = long-0.05;
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
