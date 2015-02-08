@@ -201,8 +201,8 @@ function calcRoute(lat, lon) {
 }
 
 function getHill(loc) {
-    var curLat = loc.k-0.05;
-    var curLong = loc.D-0.05;
+    var curLat = loc.k+0.05;
+    var curLong = loc.D+0.05;
     var max = 0;
     var min = 1000000;
     var positionalRequest;
@@ -220,32 +220,42 @@ function getHill(loc) {
         allResults = [results];
     });
 
-    //console.log("incoming values: " + curLat + " " + curLong);
-    for (var i = 0; i < 15; i++){
-        for (var j = 0; j < 15; j++){
-            // Create a LocationElevationRequest object using the array's one value
-            
-            latslongs.push(new google.maps.LatLng(curLat, curLong));
+    latslongs.push(new google.maps.LatLng(curLat, curLong));
 
-            curLat = curLat + 0.001;
-        }
-        ////console.log(latslongs);
-        positionalRequest = {
-            'locations': latslongs
-        }
-        // Initiate the location request
-        elevator.getElevationForLocations(positionalRequest, function(results, status) {
-            
-            console.log(results);
-            allResults.concat(results);
-        });
-        curLat = loc.k-0.05;
-        curLong = curLong + 0.001;
-        latslongs = [];
-        window.setTimeout(function(){},1000);
-        // wait = true;
-        // setTimeout("wait = true", 2000);
+    for (var j = 0; j < 1000; j++){
+        // Create a LocationElevationRequest object using the array's one value
+        
+        
+
+        curLong = curLong - 0.1;
+        latslongs.push(new google.maps.LatLng(curLat, curLong));
+        curLat = curLat - 0.001;
+        latslongs.push(new google.maps.LatLng(curLat, curLong));
+        curLong = curLong + 0.1;
+        latslongs.push(new google.maps.LatLng(curLat, curLong));
+        curLat = curLat - 0.001;
+        latslongs.push(new google.maps.LatLng(curLat, curLong));
     }
+
+    console.log("LATSLONGS");
+    console.log(latslongs);
+
+    // ////console.log(latslongs);
+    // positionalRequest = {
+    //     'locations': latslongs
+    // }
+    // // Initiate the location request
+    // elevator.getElevationForLocations(positionalRequest, function(results, status) {
+        
+    //     console.log(results);
+    //     allResults.concat(results);
+    // });
+    // curLat = loc.k-0.05;
+    // curLong = curLong + 0.001;
+    // latslongs = [];
+    // window.setTimeout(function(){},1000);
+    // // wait = true;
+    // // setTimeout("wait = true", 2000);
 
     console.log("HERE ARE THE RESULTS");
     console.log(allResults);
