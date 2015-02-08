@@ -229,7 +229,7 @@ function getHill(lat, lon) {
     //     } else {
     //       alert("Elevation service failed due to: " + status);
     //     }
-    }
+    });
 
 
     // elevator.
