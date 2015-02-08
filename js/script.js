@@ -177,9 +177,9 @@ function plotElevation(results, status) {
     });
 }
 
-function calcRoute(lat, long) {
+function calcRoute(lat, lon) {
     var start = lat;
-    var end = long;
+    var end = lon;
     var request = {
         origin: start,
         destination: end,
@@ -208,7 +208,7 @@ function getHill(lat, lon) {
     var positionalRequest;
     var latslongs = [];
 
-    
+    console.log("incoming values: " + lat + " " + lon);
     for (var i = 0; i < 100; i++){
         for (var j = 0; j < 100; j++){
             // Create a LocationElevationRequest object using the array's one value
