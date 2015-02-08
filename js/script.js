@@ -128,6 +128,9 @@ function plotElevation(results, status) {
     document.getElementById("elevation-max").textContent    = max;
     document.getElementById("elevation-min").textContent    = min;
 
+    var test = 'hsl(10+(40-10)*((elevationPath[i].elevation-min)/(max-min)),80%,100%)';
+    console.log(test);
+    
     var pathOptions = {
         path: [elevationPath[0], elevationPath[1]],
         strokeColor: 'hsl(10+(40-10)*((elevationPath[i].elevation-min)/(max-min)),80%,100%)',
