@@ -129,7 +129,7 @@ function plotElevation(results, status) {
     document.getElementById("elevation-min").textContent    = min;
 
     // Display a polyline of the elevation path.
-    for (var i = 0; i < elavationPath.length; i+2){
+    for (var i = 0; i < elevationPath.length; i+2){
         //console.log(hsl(10+(40-10)*((elevationPath[i].elevation-min)/(max-min)),80%,100%));
         var pathOptions = {
             path: [elevationPath[i], elevationPath[i+1]],
