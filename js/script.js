@@ -240,15 +240,20 @@ function getHill(loc) {
     console.log("LATSLONGS");
     console.log(latslongs);
 
-    ////console.log(latslongs);
-    positionalRequest = {
-        'locations': latslongs
+    var pathRequest = {
+        'path': path,
+        'samples': path.length*2
     }
-    // Initiate the location request
-    elevator.getElevationForLocations(positionalRequest, function(results, status) {
-        console.log("HERE ARE THE RESULTS");
+
+    // for each (point in path) {
+
+    // }
+
+    // Initiate the path request.
+    elevator.getElevationAlongPath(pathRequest, function(results, status){
+        console.log("HERE IT IS");
+        console.log(status);
         console.log(results);
-        //allResults.concat(results);
     });
     // curLat = loc.k-0.05;
     // curLong = curLong + 0.001;
