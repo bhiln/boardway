@@ -254,8 +254,8 @@ function getHill(loc) {
         console.log(results);
 
         var elevations = results;
-        min = results[0].elevation;
-        max = results[0].elevation;
+        min = results[0];
+        max = results[0];
         for (var i = 0; i < results.length; i++) {
             if (elevations[i].elevation < min.elevation)
                 min = elevations[i];
