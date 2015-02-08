@@ -200,15 +200,15 @@ function calcRoute(lat, lon) {
     });
 }
 
-function getHill([lat, lon]) {
-    var curLat = lat-0.05;
-    var curLong = lon-0.05;
+function getHill(loc) {
+    var curLat = loc[0]-0.05;
+    var curLong = loc[1]-0.05;
     var max = 0;
     var min = 1000000;
     var positionalRequest;
     var latslongs = [];
 
-    console.log("incoming values: " + lat + " " + lon);
+    console.log("incoming values: " + loc[0] + " " + loc[1]);
     for (var i = 0; i < 100; i++){
         for (var j = 0; j < 100; j++){
             // Create a LocationElevationRequest object using the array's one value
