@@ -201,14 +201,14 @@ function calcRoute(lat, lon) {
 }
 
 function getHill(loc) {
-    var curLat = loc.latitude-0.05;
-    var curLong = loc.longitude-0.05;
+    var curLat = loc.k-0.05;
+    var curLong = loc.D-0.05;
     var max = 0;
     var min = 1000000;
     var positionalRequest;
     var latslongs = [];
 
-    console.log(loc);
+    console.log("incoming values: " + curLat + " " + curLong);
     for (var i = 0; i < 100; i++){
         for (var j = 0; j < 100; j++){
             // Create a LocationElevationRequest object using the array's one value
