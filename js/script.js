@@ -253,19 +253,19 @@ function getHill(loc) {
         console.log(status);
         console.log(results);
 
-        var elevations = results;
         min = results[0];
         max = results[0];
         for (var i = 0; i < results.length; i++) {
-            if (elevations[i].elevation < min.elevation)
+            if (results[i].elevation < min.elevation)
                 min = elevations[i];
             if (elevations[i].elevation > max.elevation)
                 max = elevations[i];
         }
+        console.log(max);
+        calcRoute(max.location, min.location);
     });
 
-    console.log(max);
-    calcRoute(max.location, min.location);
+    
 
     // curLat = loc.k-0.05;
     // curLong = curLong + 0.001;
