@@ -212,7 +212,7 @@ function calcRoute(lat, long) {
     };
     directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(result);
+            //directionsDisplay.setDirections(result);
             //for each (point in result.routes[0][)
             drawPath(result.routes[0].overview_path);
             console.log(result);
