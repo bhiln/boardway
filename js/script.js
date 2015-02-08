@@ -207,6 +207,7 @@ function getHill(loc) {
     var min = 1000000;
     var positionalRequest;
     var latslongs = [];
+    var allResults = [];
 
     console.log("incoming values: " + curLat + " " + curLong);
     for (var i = 0; i < 100; i++){
@@ -217,18 +218,23 @@ function getHill(loc) {
 
             curLat = curLat + 0.001;
         }
+        //console.log(latslongs);
+        positionalRequest = {
+            'locations': latslongs
+        }
+        // Initiate the location request
+        elevator.getElevationForLocations(positionalRequest, function(results, status) {
+            
+            console.log(status);
+            allResults.push(results);
+        });
         curLat = loc.k-0.05;
         curLong = curLong + 0.001;
     }
-    console.log(latslongs);
-    positionalRequest = {
-        'locations': latslongs
-    }
-    // Initiate the location request
-    elevator.getElevationForLocations(positionalRequest, function(results, status) {
-        console.log("HERE ARE THE RESULTS");
-        console.log(status);
-    });
+
+    console.log("HERE ARE THE RESULTS");
+    console.log(allResults);
+
     // if (status == google.maps.ElevationStatus.OK) {
 
     //       // Retrieve the first result
