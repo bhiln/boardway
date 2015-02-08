@@ -206,23 +206,27 @@ function getHill(lat, lon) {
     var max = 0;
     var min = 1000000;
     var positionalRequest;
+    var latslongs[];
 
     
+    for (car i = 0; i < 100; i++){
+        for (var j = 0; j < 100; j++){
+            // Create a LocationElevationRequest object using the array's one value
+            
+            latslongs.push([curLat, curLong]);
 
-    for (var i = 0; i < 100; i++){
-        // Create a LocationElevationRequest object using the array's one value
-        positionalRequest = {
-            'locations': [curLat, curLong]
+            curLat = curLat + 0.001;
         }
-        // Initiate the location request
-        elevator.getElevationForLocations(positionalRequest, function(results, status) {
-            console.log(results);
-        });
-
-        // results = null;
-        // status = null;
-        //curLat = curLat + 0.01;
+        curLong = curLong + 0.001;
     }
+    console.log(latslongs);
+    // positionalRequest = {
+    //         'locations': [curLat, curLong]
+    //     }
+    //     // Initiate the location request
+    //     elevator.getElevationForLocations(positionalRequest, function(results, status) {
+    //         console.log(results);
+    //     });
     //     if (status == google.maps.ElevationStatus.OK) {
 
     //       // Retrieve the first result
