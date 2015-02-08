@@ -201,50 +201,37 @@ function calcRoute(lat, long) {
 }
 
 function getHill(lat, lon) {
-    var curLat = lat - 0.05;
-    var curLong = lon - 0.05;
-    var hillMax = 0;
-    var hillMin = 1000000;
+    var curLat = lat-0.05;
+    var curLong = lon-0.05;
+    var max = 0;
+    //var min = 
 
     // Create a LocationElevationRequest object using the array's one value
     var positionalRequest = {
-        'locations': [curLat, curLong]
+        'locations': [lat, lon]
     }
 
     // Initiate the location request
     elevator.getElevationForLocations(positionalRequest, function(results, status) {
-        //console.log(results);
-        // if (results[0].elevation > hillMax)
-        //     hillMax = results[0].elevation;
-        // if (results[0].elevation < hillMin)
-        //     hillMin = results[0].elevation;
+        console.log(results);
+    //     if (status == google.maps.ElevationStatus.OK) {
+
+    //       // Retrieve the first result
+    //       if (results[0]) {
+
+    //         // Open an info window indicating the elevation at the clicked position
+    //         infowindow.setContent("The elevation at this point is " + results[0].elevation + " meters.");
+    //         infowindow.setPosition(clickedLocation);
+    //         infowindow.open(map);
+    //       } else {
+    //         alert("No results found");
+    //       }
+    //     } else {
+    //       alert("Elevation service failed due to: " + status);
+    //     }
     });
 
-    for (var i = 0; i < 100; i++){
 
-        for (var j = 0; j < 100; j++){
-
-            // // Create a LocationElevationRequest object using the array's one value
-            // var positionalRequest = {
-            //     'locations': [curLat, curLong]
-            // }
-
-            // // Initiate the location request
-            // elevator.getElevationForLocations(positionalRequest, function(results, status) {
-            //     console.log(results);
-            //     // if (results[0].elevation > hillMax)
-            //     //     hillMax = results[0].elevation;
-            //     // if (results[0].elevation < hillMin)
-            //     //     hillMin = results[0].elevation;
-            // });
-
-            
-            curLat = curLat + 0.001;
-        }
-        curLong = curLong + 0.001;
-    }
-
-    console.log(hillMax + " to " + hillMin);
     // elevator.
     // for (int i = 0; i < 100; i++){
     //     lats
