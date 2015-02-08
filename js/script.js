@@ -185,9 +185,9 @@ function calcRoute(start, end) {
     };
     directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
-            directionsDisplay.setDirections(result);
+            //directionsDisplay.setDirections(result);
             //for each (point in result.routes[0][)
-            drawPath(result.routes[0].overview_path);
+            //drawPath(result.routes[0].overview_path);
             //console.log(result);
             getHill(myLoc1);
             document.getElementById("location-start").textContent   = result.routes[0].legs[0].start_address;
@@ -264,7 +264,7 @@ function getHill(loc) {
         }
     });
 
-    //calcRoute(max., min);
+    calcRoute(max.location, min.location);
 
     // curLat = loc.k-0.05;
     // curLong = curLong + 0.001;
