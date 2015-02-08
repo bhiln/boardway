@@ -129,16 +129,17 @@ function plotElevation(results, status) {
     document.getElementById("elevation-min").textContent    = min;
 
     // Display a polyline of the elevation path.
-    var pathOptions = {
-        path: [elevationPath[0], elevationPath[1]],
-        strokeColor: '#FF0000',
-        opacity: 1,
-        strokeWeight: 10,
-        map: map
+    for (var i = 0; i < elavationPath.length; i+2){
+        var pathOptions = {
+            path: [elevationPath[i], elevationPath[i+1]],
+            strokeColor: hsl(10+(40-10)*((elevationPath[i].elevation-min)/(max-min)),80%,100%),
+            opacity: 0.4,
+            strokeWeight: 10,
+            map: map
+        }
+        console.log(pathOptions);
+        polyline = new google.maps.Polyline(pathOptions);
     }
-    console.log(pathOptions);
-    polyline = new google.maps.Polyline(pathOptions);
-
     // Extract the data from which to populate the chart.
     // Because the samples are equidistant, the 'Sample'
     // column here does double duty as distance along the
