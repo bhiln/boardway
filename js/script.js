@@ -218,6 +218,8 @@ function getHill(lat, lon) {
             console.log(results);
         });
 
+        results = null;
+        status = null;
         //curLat = curLat + 0.01;
     }
     //     if (status == google.maps.ElevationStatus.OK) {
