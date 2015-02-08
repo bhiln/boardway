@@ -150,14 +150,11 @@ function plotElevation(results, status) {
       legend: { position: 'bottom' }
     };
 
-    
-
     // Draw the chart using the data within its DIV.
     //document.getElementById('elevation_chart').style.display = 'line';
     chart.draw(data, {
         height: 100,
         width: 150,
-        hAxis.gridlines.color: 'transparent',
         legend: 'none',
         curveType: 'function',
         titleY: 'Elevation (m)'
