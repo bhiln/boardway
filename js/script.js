@@ -257,9 +257,9 @@ function getHill(loc) {
         max = results[0];
         for (var i = 0; i < results.length; i++) {
             if (results[i].elevation < min.elevation)
-                min = elevations[i];
-            if (elevations[i].elevation > max.elevation)
-                max = elevations[i];
+                min = results[i];
+            if (results[i].elevation > max.elevation)
+                max = results[i];
         }
         console.log(max);
         calcRoute(max.location, min.location);
