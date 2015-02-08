@@ -3,7 +3,7 @@ var map;
 var directionsService = new google.maps.DirectionsService();
 var directionsDisplay;
 var chart;
-var polyline;
+var polyline = new google.maps.Polyline();
 var max = 0;
 var min = 0;
 
@@ -138,7 +138,7 @@ function plotElevation(results, status) {
             map: map
         }
         //console.log(pathOptions);
-        polyline = new google.maps.Polyline(pathOptions);
+        polyline.setPath(pathOptions);
     }
 
     window.setTimeout(function(){},1000);
@@ -152,7 +152,7 @@ function plotElevation(results, status) {
             map: map
         }
         //console.log(pathOptions);
-        polyline = new google.maps.Polyline(pathOptions);
+        polyline.setPath(pathOptions);
     }
     // Extract the data from which to populate the chart.
     // Because the samples are equidistant, the 'Sample'
