@@ -152,15 +152,11 @@ function plotElevation(results, status) {
 
     
 
-    vAxis: {
-        gridlines: {
-            color: 'transparent'
-        }
-    }
     // Draw the chart using the data within its DIV.
     //document.getElementById('elevation_chart').style.display = 'line';
     chart.draw(data, {
-        height: 150,
+        height: 100,
+        width: 150,
         legend: 'none',
         curveType: 'function',
         titleY: 'Elevation (m)'
