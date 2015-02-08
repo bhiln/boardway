@@ -225,12 +225,13 @@ function getHill(loc) {
         // Initiate the location request
         elevator.getElevationForLocations(positionalRequest, function(results, status) {
             
-            console.log();
+            console.log(status);
             allResults.push(results);
         });
         curLat = loc.k-0.05;
         curLong = curLong + 0.001;
         latslongs = [];
+        window.setTimeout(function(){},1000);
         // wait = true;
         // setTimeout("wait = true", 2000);
     }
