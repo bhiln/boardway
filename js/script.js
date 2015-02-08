@@ -83,7 +83,7 @@ function drawPath(path) {
 
     // Create a new chart in the elevation_chart DIV.
     //chart = new google.visualization.ColumnChart(document.getElementById('elevation_chart'));
-    chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+    chart = new google.visualization.LineChart(document.getElementById('elevation_chart'));
 
     // Create a PathElevationRequest object using this array.
     // Ask for 256 samples along that path.
