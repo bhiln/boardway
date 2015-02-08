@@ -150,7 +150,7 @@ function plotElevation(results, status) {
     };
 
 
-    var data = google.visualization.arrayToDataTable(elevations[i].elevation);
+    var data = google.visualization.arrayToDataTable(elevations);
     var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
     chart.draw(data, options);
 
