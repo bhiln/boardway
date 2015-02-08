@@ -160,7 +160,7 @@ function calcRoute(lat, long) {
             directionsDisplay.setDirections(result);
             //for each (point in result.routes[0][)
             drawPath(result.routes[0].overview_path, function(elevation) {
-                console.log(result);
+                console.log(elevation);
                 document.getElementById("location-start").textContent   = "Start Location: " + result.routes[0].legs[0].start_address;
                 document.getElementById("location-end").textContent     = "End location: " + result.routes[0].legs[0].end_address;
                 document.getElementById("distance").textContent         = "Distance: " + result.routes[0].legs[0].distance.text;
