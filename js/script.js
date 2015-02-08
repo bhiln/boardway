@@ -217,6 +217,7 @@ function getHill(loc) {
 
             curLat = curLat + 0.001;
         }
+        curLat = loc.k-0.05;
         curLong = curLong + 0.001;
     }
     console.log(latslongs);
@@ -226,7 +227,7 @@ function getHill(loc) {
     // Initiate the location request
     elevator.getElevationForLocations(positionalRequest, function(results, status) {
         console.log("HERE ARE THE RESULTS");
-        console.log(results);
+        console.log(status);
     });
     // if (status == google.maps.ElevationStatus.OK) {
 
