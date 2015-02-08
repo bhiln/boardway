@@ -230,10 +230,10 @@ function getHill(lat, lon) {
         }
     }
 
-    elevator.
-    for (int i = 0; i < 100; i++){
-        lats
-    }
+    // elevator.
+    // for (int i = 0; i < 100; i++){
+    //     lats
+    // }
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
