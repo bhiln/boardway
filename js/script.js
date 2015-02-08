@@ -3,7 +3,7 @@ var map;
 var directionsService = new google.maps.DirectionsService();
 var directionsDisplay;
 var chart;
-var polyline = new google.maps.Polyline;
+var polyline;
 var max = 0;
 var min = 0;
 
@@ -44,6 +44,14 @@ if (navigator.geolocation) {
         myEnd1 = new google.maps.LatLng(position.coords.latitude + 0.05, position.coords.longitude + 0.05);
         myLoc2 = new google.maps.LatLng(position.coords.latitude - 0.02, position.coords.longitude + 0.02);
         myEnd2 = new google.maps.LatLng(position.coords.latitude - 0.04, position.coords.longitude + 0.03);
+
+        var pathOptions = {
+            path: [myLoc1, myEnd1],
+            opacity: 1,
+            strokeWeight: 20,
+            map: map
+        }
+        polyline = new google.maps.Polyline(pathOptions);
 
     },
     function (error) {
