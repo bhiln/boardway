@@ -191,7 +191,7 @@ function calcRoute(lat, lon) {
             //for each (point in result.routes[0][)
             drawPath(result.routes[0].overview_path);
             console.log(result);
-            getHill(myLoc1, myEnd1);
+            getHill(myLoc1);
             document.getElementById("location-start").textContent   = result.routes[0].legs[0].start_address;
             document.getElementById("location-end").textContent     = result.routes[0].legs[0].end_address;
             document.getElementById("distance").textContent         = result.routes[0].legs[0].distance.text;
@@ -200,7 +200,7 @@ function calcRoute(lat, lon) {
     });
 }
 
-function getHill(lat, lon) {
+function getHill([lat, lon]) {
     var curLat = lat-0.05;
     var curLong = lon-0.05;
     var max = 0;
