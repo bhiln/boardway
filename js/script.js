@@ -211,7 +211,7 @@ function getHill(loc) {
 
     ////console.log(latslongs);
     positionalRequest = {
-        'locations': new google.maps.LatLng(curLat, curLong)
+        'locations': [new google.maps.LatLng(curLat, curLong)]
     }
     
     elevator.getElevationForLocations(positionalRequest, function(results, status) {
