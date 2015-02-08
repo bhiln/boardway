@@ -210,8 +210,8 @@ function getHill(loc) {
     var allResults = [];
 
     console.log("incoming values: " + curLat + " " + curLong);
-    for (var i = 0; i < 100; i++){
-        for (var j = 0; j < 100; j++){
+    for (var i = 0; i < 15; i++){
+        for (var j = 0; j < 15; j++){
             // Create a LocationElevationRequest object using the array's one value
             
             latslongs.push(new google.maps.LatLng(curLat, curLong));
@@ -225,12 +225,14 @@ function getHill(loc) {
         // Initiate the location request
         elevator.getElevationForLocations(positionalRequest, function(results, status) {
             
-            console.log(status);
+            console.log();
             allResults.push(results);
         });
         curLat = loc.k-0.05;
         curLong = curLong + 0.001;
         latslongs = [];
+        wait = true;
+        setTimeout("wait = true", 2000);
     }
 
     console.log("HERE ARE THE RESULTS");
