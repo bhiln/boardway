@@ -98,7 +98,6 @@ function drawPath(path) {
 
     // Initiate the path request.
     elevator.getElevationAlongPath(pathRequest, plotElevation);
-    console.log(elevator);
 }
 
 // Takes an array of ElevationResult objects, draws the path on the map
@@ -108,6 +107,7 @@ function plotElevation(results, status) {
         return;
     }
     var elevations = results;
+    console.log(elevations);
 
     // Extract the elevation samples from the returned results
     // and store them in an array of LatLngs.
