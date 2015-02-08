@@ -128,31 +128,6 @@ function plotElevation(results, status) {
     document.getElementById("elevation-max").textContent    = max;
     document.getElementById("elevation-min").textContent    = min;
 
-    var test = "hsl(10+(40-10)*((elevationPath[i].elevation-min)/(max-min)),80%,100%)";
-    console.log(test);
-
-    // var pathOptions = {
-    //     path: [elevationPath[0], elevationPath[1]],
-    //     strokeColor: 'hsl(' + (50-(50-0)*((elevations[0].elevation-min)/(max-min))) + ',80%,50%)',
-    //     opacity: 1,
-    //     strokeWeight: 10,
-    //     map: map
-    // }
-    // console.log(pathOptions);
-    // polyline = new google.maps.Polyline(pathOptions);
-
-    // for each (point in elevations) {
-    //     var pathOptions = {
-    //         path: [elevationPath[0], elevationPath[1]],
-    //         strokeColor: 'hsl(' + (50-(50-0)*((elevations[0].elevation-min)/(max-min))) + ',80%,50%)',
-    //         opacity: 1,
-    //         strokeWeight: 10,
-    //         map: map
-    //     }
-    //     console.log(pathOptions);
-    //     polyline = new google.maps.Polyline(pathOptions);
-    // }
-
     // Display a polyline of the elevation path.
     for (var i = 0; i < elevations.length; i++){
         var pathOptions = {
@@ -224,9 +199,41 @@ function calcRoute(lat, long) {
     });
 }
 
-function getHill(lat, long) {
+function getHill(lat, lon) {
     var curLat = lat-0.05;
-    var curLong = long-0.05;
+    var curLong = lon-0.05;
+    var max = 0;
+    var min = 
+
+    // Create a LocationElevationRequest object using the array's one value
+    var positionalRequest = {
+    'locations': [lat, lon]
+    }
+
+    // Initiate the location request
+    elevator.getElevationForLocations(positionalRequest, function(results, status) {
+        console.log(results);
+        if (status == google.maps.ElevationStatus.OK) {
+
+          // Retrieve the first result
+          if (results[0]) {
+
+            // Open an info window indicating the elevation at the clicked position
+            infowindow.setContent("The elevation at this point is " + results[0].elevation + " meters.");
+            infowindow.setPosition(clickedLocation);
+            infowindow.open(map);
+          } else {
+            alert("No results found");
+          }
+        } else {
+          alert("Elevation service failed due to: " + status);
+        }
+    }
+
+    elevator.
+    for (int i = 0; i < 100; i++){
+        lats
+    }
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
