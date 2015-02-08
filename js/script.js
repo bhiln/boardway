@@ -209,16 +209,16 @@ function getHill(loc) {
     var latslongs = [];
     var allResults = [];
 
-    ////console.log(latslongs);
-    positionalRequest = {
-        'locations': [new google.maps.LatLng(curLat, curLong)]
-    }
+    // ////console.log(latslongs);
+    // positionalRequest = {
+    //     'locations': [new google.maps.LatLng(curLat, curLong)]
+    // }
     
-    elevator.getElevationForLocations(positionalRequest, function(results, status) {
+    // elevator.getElevationForLocations(positionalRequest, function(results, status) {
             
-        console.log(results);
-        allResults = [results];
-    });
+    //     console.log(results);
+    //     allResults = [results];
+    // });
 
     latslongs.push(new google.maps.LatLng(curLat, curLong));
 
@@ -250,11 +250,13 @@ function getHill(loc) {
     // }
 
     // Initiate the path request.
-    elevator.getElevationAlongPath(pathRequest, function(results, status){
-        console.log("HERE IT IS");
-        console.log(status);
-        console.log(results);
-    });
+    elevator.getElevationAlongPath(pathRequest, plotElevation);
+    // elevator.getElevationAlongPath(pathRequest, function(results, status){
+    //     console.log("HERE IT IS");
+    //     console.log(status);
+    //     console.log(results);
+    // });
+
     // curLat = loc.k-0.05;
     // curLong = curLong + 0.001;
     // latslongs = [];
