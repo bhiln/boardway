@@ -222,7 +222,7 @@ function getHill(loc) {
 
     latslongs.push(new google.maps.LatLng(curLat, curLong));
 
-    for (var j = 0; j < 1000; j++){
+    for (var j = 0; j < 100; j++){
         // Create a LocationElevationRequest object using the array's one value
         
         
