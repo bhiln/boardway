@@ -206,23 +206,37 @@ function getHill(lat, lon) {
     var hillMax = 0;
     var hillMin = 1000000;
 
+    // Create a LocationElevationRequest object using the array's one value
+    var positionalRequest = {
+        'locations': [curLat, curLong]
+    }
+
+    // Initiate the location request
+    elevator.getElevationForLocations(positionalRequest, function(results, status) {
+        console.log(results);
+        // if (results[0].elevation > hillMax)
+        //     hillMax = results[0].elevation;
+        // if (results[0].elevation < hillMin)
+        //     hillMin = results[0].elevation;
+    });
+
     for (var i = 0; i < 100; i++){
 
         for (var j = 0; j < 100; j++){
 
-            // Create a LocationElevationRequest object using the array's one value
-            var positionalRequest = {
-                'locations': [curLat, curLong]
-            }
+            // // Create a LocationElevationRequest object using the array's one value
+            // var positionalRequest = {
+            //     'locations': [curLat, curLong]
+            // }
 
-            // Initiate the location request
-            elevator.getElevationForLocations(positionalRequest, function(results, status) {
-                console.log(results);
-                // if (results[0].elevation > hillMax)
-                //     hillMax = results[0].elevation;
-                // if (results[0].elevation < hillMin)
-                //     hillMin = results[0].elevation;
-            });
+            // // Initiate the location request
+            // elevator.getElevationForLocations(positionalRequest, function(results, status) {
+            //     console.log(results);
+            //     // if (results[0].elevation > hillMax)
+            //     //     hillMax = results[0].elevation;
+            //     // if (results[0].elevation < hillMin)
+            //     //     hillMin = results[0].elevation;
+            // });
 
             
             curLat = curLat + 0.001;
