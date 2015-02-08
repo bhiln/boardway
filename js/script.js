@@ -158,6 +158,7 @@ function plotElevation(results, status) {
         legend: 'none',
         curveType: 'function',
         lineWidth: 1,
+        pointSize: 0,
         titleY: 'Elevation (m)'
     });
 }
