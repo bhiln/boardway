@@ -133,7 +133,7 @@ function plotElevation(results, status) {
 
     var pathOptions = {
         path: [elevationPath[0], elevationPath[1]],
-        strokeColor: 'hsl(0,80%,100%)',
+        strokeColor: 'hsl(' + 10+(40-10)*((elevationPath[i].elevation-min)/(max-min)) + ',80%,100%)',
         opacity: 1,
         strokeWeight: 10,
         map: map
@@ -142,7 +142,7 @@ function plotElevation(results, status) {
     polyline = new google.maps.Polyline(pathOptions);
     var pathOptions = {
         path: [elevationPath[1], elevationPath[2]],
-        strokeColor: 'hsl(10+(40-10)*((elevationPath[i].elevation-min)/(max-min)),80%,100%)',
+        strokeColor: 'hsl(' + 10+(40-10)*((elevationPath[i].elevation-min)/(max-min)) + ',80%,100%)',
         opacity: 1,
         strokeWeight: 10,
         map: map
