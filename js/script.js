@@ -220,14 +220,15 @@ function getHill(loc) {
         curLong = curLong + 0.001;
     }
     console.log(latslongs);
-    // positionalRequest = {
-    //         'locations': [curLat, curLong]
-    //     }
-    //     // Initiate the location request
-    //     elevator.getElevationForLocations(positionalRequest, function(results, status) {
-    //         console.log(results);
-    //     });
-    //     if (status == google.maps.ElevationStatus.OK) {
+    positionalRequest = {
+        'locations': [curLat, curLong]
+    }
+    // Initiate the location request
+    elevator.getElevationForLocations(positionalRequest, function(results, status) {
+        console.log("HERE ARE THE RESULTS");
+        console.log(results);
+    });
+    // if (status == google.maps.ElevationStatus.OK) {
 
     //       // Retrieve the first result
     //       if (results[0]) {
