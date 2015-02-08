@@ -241,8 +241,8 @@ function getHill(loc) {
     console.log(latslongs);
 
     var pathRequest = {
-        'path': path,
-        'samples': path.length*2
+        'path': latslongs,
+        'samples': latslongs.length*2
     }
 
     // for each (point in path) {
