@@ -92,9 +92,9 @@ function drawPath(path) {
         'samples': path.length*2
     }
 
-    for each (point in path) {
+    // for each (point in path) {
 
-    }
+    // }
 
     // Initiate the path request.
     elevator.getElevationAlongPath(pathRequest, plotElevation);
