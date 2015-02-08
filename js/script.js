@@ -208,7 +208,7 @@ function getHill(loc) {
     var positionalRequest;
     var latslongs = [];
 
-    console.log("incoming values: " + loc);
+    console.log("incoming values: " + curLat + " " + curLong);
     for (var i = 0; i < 100; i++){
         for (var j = 0; j < 100; j++){
             // Create a LocationElevationRequest object using the array's one value
