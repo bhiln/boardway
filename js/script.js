@@ -231,8 +231,8 @@ function getHill(loc) {
         curLat = loc.k-0.05;
         curLong = curLong + 0.001;
         latslongs = [];
-        wait = true;
-        setTimeout("wait = true", 2000);
+        // wait = true;
+        // setTimeout("wait = true", 2000);
     }
 
     console.log("HERE ARE THE RESULTS");
