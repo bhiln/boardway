@@ -117,6 +117,9 @@ function plotElevation(results, status) {
             max = elevations[i].elevation;
     }
     console.log(min + " " + max);
+    document.getElementById("elevation-change").textContent = "Change in elevation: " + (max - min);
+    document.getElementById("elevation-max").textContent    = "Max: " + max;
+    document.getElementById("elevation-min").textContent    = "Min: " + min;
 
     // Display a polyline of the elevation path.
     var pathOptions = {
@@ -159,15 +162,10 @@ function calcRoute(lat, long) {
         if (status == google.maps.DirectionsStatus.OK) {
             directionsDisplay.setDirections(result);
             //for each (point in result.routes[0][)
-            drawPath(result.routes[0].overview_path, function(elevation) {
-                console.log(elevation);
-                document.getElementById("location-start").textContent   = "Start Location: " + result.routes[0].legs[0].start_address;
-                document.getElementById("location-end").textContent     = "End location: " + result.routes[0].legs[0].end_address;
-                document.getElementById("distance").textContent         = "Distance: " + result.routes[0].legs[0].distance.text;
-                document.getElementById("elevation-change").textContent = "Change in elevation: " + (max - min);
-                document.getElementById("elevation-max").textContent    = "Max: " + max;
-                document.getElementById("elevation-min").textContent    = "Min: " + min;
-            });
+            drawPath(result.routes[0].overview_path);
+            document.getElementById("location-start").textContent   = "Start Location: " + result.routes[0].legs[0].start_address;
+            document.getElementById("location-end").textContent     = "End location: " + result.routes[0].legs[0].end_address;
+            document.getElementById("distance").textContent         = "Distance: " + result.routes[0].legs[0].distance.text;
             
         }
     });
