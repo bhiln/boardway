@@ -207,7 +207,18 @@ function getHill(loc) {
     var min = 1000000;
     var positionalRequest;
     var latslongs = [];
-    var allResults = [loc];
+    var allResults = [];
+
+    ////console.log(latslongs);
+    positionalRequest = {
+        'locations': new google.maps.LatLng(curLat, curLong)
+    }
+    
+    elevator.getElevationForLocations(positionalRequest, function(results, status) {
+            
+        console.log(results);
+        allResults = results;
+    });
 
     //console.log("incoming values: " + curLat + " " + curLong);
     for (var i = 0; i < 15; i++){
