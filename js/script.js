@@ -177,9 +177,7 @@ function plotElevation(results, status) {
     });
 }
 
-function calcRoute(lat, lon) {
-    var start = lat;
-    var end = lon;
+function calcRoute(start, end) {
     var request = {
         origin: start,
         destination: end,
@@ -203,8 +201,8 @@ function calcRoute(lat, lon) {
 function getHill(loc) {
     var curLat = loc.k+0.05;
     var curLong = loc.D+0.05;
-    var max = 0;
-    var min = 1000000;
+    var max;
+    var min;
     var positionalRequest;
     var latslongs = [];
     var allResults = [];
@@ -250,12 +248,24 @@ function getHill(loc) {
     // }
 
     // Initiate the path request.
-    elevator.getElevationAlongPath(pathRequest, plotElevation);
-    // elevator.getElevationAlongPath(pathRequest, function(results, status){
-    //     console.log("HERE IT IS");
-    //     console.log(status);
-    //     console.log(results);
-    // });
+    elevator.getElevationAlongPath(pathRequest, function(results, status){
+        console.log("HERE IT IS");
+        console.log(status);
+        console.log(results);
+    });
+
+    var elevations = results;
+    min = results[0].elevation;
+    max = 0;
+    for (var i = 0; i < results.length; i++) {
+        elevationPath.push(elevations[i].location);
+        if (elevations[i].elevation < min)
+            min = elevations[i].elevation;
+        if (elevations[i].elevation > max)
+            max = elevations[i].elevation;
+    }
+
+    //calcRoute(max., min);
 
     // curLat = loc.k-0.05;
     // curLong = curLong + 0.001;
