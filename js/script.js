@@ -112,9 +112,9 @@ function plotElevation(results, status) {
     for (var i = 0; i < results.length; i++) {
         elevationPath.push(elevations[i].location);
         if (elevations[i].elevation < min)
-            min = elevations[i].elevation;
+            min = Math.floor(elevations[i].elevation);
         if (elevations[i].elevation > max)
-            max = elevations[i].elevation;
+            max = Math.floor(elevations[i].elevation);
     }
     console.log(min + " " + max);
     document.getElementById("elevation-change").textContent = (max - min);
