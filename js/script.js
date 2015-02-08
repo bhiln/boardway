@@ -255,11 +255,11 @@ function getHill(loc) {
 
         var elevations = results;
         min = results[0].elevation;
-        max = 0;
+        max = results[0].elevation;
         for (var i = 0; i < results.length; i++) {
-            if (elevations[i].elevation < min)
+            if (elevations[i].elevation < min.elevation)
                 min = elevations[i];
-            if (elevations[i].elevation > max)
+            if (elevations[i].elevation > max.elevation)
                 max = elevations[i];
         }
     });
