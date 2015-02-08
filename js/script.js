@@ -134,7 +134,7 @@ function plotElevation(results, status) {
             path: [elevationPath[i], elevationPath[i+1]],
             strokeColor: 'hsl(' + (50-(50-0)*((elevations[i].elevation-min)/(max-min))) + ',80%,50%)',
             opacity: 1,
-            strokeWeight: 15,
+            strokeWeight: 20,
             map: map
         }
         //console.log(pathOptions);
@@ -147,7 +147,7 @@ function plotElevation(results, status) {
             path: [elevationPath[i], elevationPath[i+1]],
             strokeColor: '#FFFFFF',
             opacity: 1,
-            strokeWeight: 8,
+            strokeWeight: 10,
             map: map
         }
         //console.log(pathOptions);
