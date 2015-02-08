@@ -130,7 +130,7 @@ function plotElevation(results, status) {
 
     // Display a polyline of the elevation path.
     var pathOptions = {
-        path: elevationPath[0],
+        path: [elevationPath[0]],
         strokeColor: '#0000CC',
         opacity: 0.4,
         map: map
