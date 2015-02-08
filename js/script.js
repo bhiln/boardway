@@ -201,8 +201,8 @@ function calcRoute(lat, lon) {
 }
 
 function getHill(loc) {
-    var curLat = loc[0]-0.05;
-    var curLong = loc[1]-0.05;
+    var curLat = loc.latitude-0.05;
+    var curLong = loc.longitude-0.05;
     var max = 0;
     var min = 1000000;
     var positionalRequest;
@@ -213,7 +213,7 @@ function getHill(loc) {
         for (var j = 0; j < 100; j++){
             // Create a LocationElevationRequest object using the array's one value
             
-            latslongs.push([curLat, curLong]);
+            latslongs.push(new google.maps.LatLng(curLat, curLong));
 
             curLat = curLat + 0.001;
         }
