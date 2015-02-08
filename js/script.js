@@ -161,13 +161,13 @@ function plotElevation(results, status) {
         pointSize: 0,
         hAxis: {
             gridlines: {
-                color: #FFFFFF
+                color: '#FFFFFF'
             }
         },
         pointSize: 0,
         vAxis: {
             gridlines: {
-                color: #FFFFFF
+                color: '#FFFFFF'
             }
         },
         titleY: 'Elevation (m)'
