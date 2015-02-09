@@ -189,7 +189,7 @@ function plotElevation(results, status) {
         path: elevationPath,
         strokeColor: '#FFFFFF',
         opacity: 1,
-        strokeWeight: 5,
+        strokeWeight: 7,
         map: map
     }
     //console.log(pathOptions);
