@@ -357,6 +357,10 @@ function getHill(loc) {
                 max = results[i];
         }
         console.log(max);
+
+        //if ($.inArray([max, min], routes))
+        console.log("CHECK ARRAY");
+        console.log($.inArray([max, min], routes));
         calcRoute(max.location, min.location);
     });
 
