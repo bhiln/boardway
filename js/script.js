@@ -14,6 +14,7 @@ var min = 0;
 var markerArray = [];
 var polyline;
 var polylineArray = [];
+var routes = [];
 
 // The following path marks a general path from Mt.
 // Whitney, the highest point in the continental United
@@ -71,6 +72,15 @@ function initialize() {
         center: myLoc1,
         mapTypeId: 'terrain'
     }
+
+    if(typeof(Storage) !== "undefined") {
+    // Code for localStorage/sessionStorage.
+        var test = localStorage.getItem("lastname");
+    } else {
+        // Sorry! No Web Storage support..
+        console.log("No web storage support...");
+    }
+
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
     directionsDisplay.setMap(map);
     directionsDisplay.setPanel(document.getElementById("directionsPanel"));
