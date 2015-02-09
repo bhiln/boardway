@@ -57,11 +57,11 @@ if (navigator.geolocation) {
     function (error) {
         console.log("Something went wrong: ", error);
     }
-    // {
-    //     timeout: (5 * 1000),
-    //     maximumAge: (1000 * 60 * 15),
-    //     enableHighAccuracy: true
-    // }
+    {
+        timeout: (5 * 1000),
+        maximumAge: (1000 * 60 * 15),
+        enableHighAccuracy: true
+    }
     );
 }
 
@@ -224,7 +224,7 @@ function calcRoute(start, end) {
     };
 
     // First, remove any existing markers from the map.
-    for (var i = 0; i < markerArray.length; i++) {
+    for (var i = 0; i <= markerArray.length; i++) {
         markerArray[i].setMap(null);
     }
 
