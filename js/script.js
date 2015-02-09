@@ -227,7 +227,7 @@ function showSteps(directionResult) {
       map: map
     });
     attachInstructionText(marker, myRoute.steps[i].instructions);
-    markerArray[i] = marker;
+    //markerArray[i] = marker;
   }
 }
 
