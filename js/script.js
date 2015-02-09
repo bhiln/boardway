@@ -179,6 +179,7 @@ function plotElevation(results, status) {
         titleY: 'Elevation (m)'
     });
 
+    window.setTimeout(function(){},1000);
     // Display a polyline of the elevation path.
     var pathOptions = {
         path: elevationPath,
