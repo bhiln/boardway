@@ -139,7 +139,7 @@ function plotElevation(results, status) {
             path: [elevationPath[i], elevationPath[i+1]],
             strokeColor: 'hsl(' + (50-(50-0)*((elevations[i].elevation-min)/(max-min))) + ',80%,50%)',
             opacity: 1,
-            strokeWeight: 15,
+            strokeWeight: 5,
             geodesic: true,
             map: map
         }
@@ -184,25 +184,25 @@ function plotElevation(results, status) {
         titleY: 'Elevation (m)'
     });
 
-    //Display a polyline of the elevation path.
-    var pathOptions = {
-        path: elevationPath,
-        strokeColor: '#FFFFFF',
-        opacity: 1,
-        strokeWeight: 7,
-        map: map
-    }
-    //console.log(pathOptions);
-    polyline = new google.maps.Polyline(pathOptions);
+    // //Display a polyline of the elevation path.
+    // var pathOptions = {
+    //     path: elevationPath,
+    //     strokeColor: '#FFFFFF',
+    //     opacity: 1,
+    //     strokeWeight: 7,
+    //     map: map
+    // }
+    // //console.log(pathOptions);
+    // polyline = new google.maps.Polyline(pathOptions);
 
-    //Display a polyline of the elevation path.
-    var pathOptions = {
-        path: elevationPath,
-        strokeColor: '#0000FF',
-        opacity: 1,
-        strokeWeight: 2,
-        map: map
-    }
+    // //Display a polyline of the elevation path.
+    // var pathOptions = {
+    //     path: elevationPath,
+    //     strokeColor: '#0000FF',
+    //     opacity: 1,
+    //     strokeWeight: 2,
+    //     map: map
+    // }
     //console.log(pathOptions);
     polyline = new google.maps.Polyline(pathOptions);
 }
