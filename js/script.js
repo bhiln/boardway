@@ -143,8 +143,8 @@ function plotElevation(results, status) {
     document.getElementById("elevation-max").textContent    = max;
     document.getElementById("elevation-min").textContent    = min;
 
-    for each (var blip in polylineArray) {
-        blip.setMap(null);
+    for (var i = 0; i < polylineArray.length; i++) {
+        polylineArray[i].setMap(null);
     }
     polylineArray = [];
     
