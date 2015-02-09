@@ -76,23 +76,24 @@ function initialize() {
 
     if(typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
-        var routeName = "route" + count;
-        var tempRoute = localStorage.getItem(routeName);
-        if (tempRoute !== null)
-                routes.push(tempRoute);
-        while (tempRoute !== null) {
-            count++;
-            routeName = "route" + count;
-            tempRoute = localStorage.getItem(routeName);
-            if (tempRoute !== null)
-                routes.push(tempRoute);
-        } 
-        console.log("WebStorage");
-        console.log(routes);
-    } else {
-        // Sorry! No Web Storage support..
-        console.log("No web storage support...");
-    }
+    //     for (var key in localStorage)
+    //     var routeName = "route" + count;
+    //     var tempRoute = localStorage.getItem(routeName);
+    //     if (tempRoute !== null)
+    //             routes.push(tempRoute);
+    //     while (tempRoute !== null) {
+    //         count++;
+    //         routeName = "route" + count;
+    //         tempRoute = localStorage.getItem(routeName);
+    //         if (tempRoute !== null)
+    //             routes.push(tempRoute);
+    //     } 
+    //     console.log("WebStorage");
+    //     console.log(routes);
+    // } else {
+    //     // Sorry! No Web Storage support..
+    //     console.log("No web storage support...");
+    // }
 
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
     directionsDisplay.setMap(map);
@@ -360,14 +361,11 @@ function getHill(loc) {
         }
         console.log(max);
 
-        if (routes.indexOf([max.location, min.location], 0) == -1) {
-            console.log("adding new route: " + max.location + " " + min.location);
-            routes.push([max.location, min.location]);
-            localStorage.setItem("route" + count, [max.location, min.location]);
-        }
-        else{
+
+        if (localStorage.getItem([max.location, min.location]) == null)
+            localStorage.setItem([max.location, min.location], [max.location, min.location]);
+        else
             console.log("ROUTE ALREADY EXISTS");
-        }
 
         calcRoute(max.location, min.location);
     });
