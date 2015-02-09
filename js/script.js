@@ -179,17 +179,19 @@ function plotElevation(results, status) {
         titleY: 'Elevation (m)'
     });
 
-    window.setTimeout(function(){},1000);
-    // Display a polyline of the elevation path.
-    var pathOptions = {
-        path: elevationPath,
-        strokeColor: '#FFFFFF',
-        opacity: 1,
-        strokeWeight: 10,
-        map: map
-    }
-    //console.log(pathOptions);
-    polyline = new google.maps.Polyline(pathOptions);
+    window.setTimeout(function(){
+        // Display a polyline of the elevation path.
+        var pathOptions = {
+            path: elevationPath,
+            strokeColor: '#FFFFFF',
+            opacity: 1,
+            strokeWeight: 10,
+            map: map
+        }
+        //console.log(pathOptions);
+        polyline = new google.maps.Polyline(pathOptions);
+    },1000);
+    
 }
 
 function calcRoute(start, end) {
