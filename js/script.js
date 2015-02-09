@@ -358,9 +358,14 @@ function getHill(loc) {
         }
         console.log(max);
 
-        //if ($.inArray([max, min], routes))
-        console.log("CHECK ARRAY");
-        console.log(routes.indexOf([max, min], 0));
+        if (routes.indexOf([max, min], 0) == -1) {
+            console.log("adding new route: " + max + " " + min);
+            routes.push([max, min]);
+        }
+        else{
+            console.log("ROUTE ALREADY EXISTS");
+        }
+
         calcRoute(max.location, min.location);
     });
 
