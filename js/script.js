@@ -231,6 +231,15 @@ function showSteps(directionResult) {
   }
 }
 
+function attachInstructionText(marker, text) {
+  google.maps.event.addListener(marker, 'click', function() {
+    // Open an info window when the marker is clicked on,
+    // containing the text of the step.
+    stepDisplay.setContent(text);
+    stepDisplay.open(map, marker);
+  });
+}
+
 function getHill(loc) {
     var curLat = loc.k+0.05;
     var curLong = loc.D+0.05;
