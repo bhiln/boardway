@@ -2,6 +2,7 @@ var elevator;
 var map;
 var directionsService = new google.maps.DirectionsService();
 var directionsDisplay;
+var stepDisplay;
 var chart;
 var polyline;
 var max = 0;
@@ -73,6 +74,8 @@ function initialize() {
 
     // Create an ElevationService.
     elevator = new google.maps.ElevationService();
+    // Instantiate an info window to hold step text.
+    stepDisplay = new google.maps.InfoWindow();
 
     // Draw the path, using the Visualization API and the Elevation service.
     //drawPath(myLoc1, myLoc1);
