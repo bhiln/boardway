@@ -360,7 +360,7 @@ function getHill(loc) {
         }
         console.log(max);
 
-        if (routes.indexOf([max, min], 0) == -1) {
+        if (routes.indexOf([max.location, min.location], 0) == -1) {
             console.log("adding new route: " + max.location + " " + min.location);
             routes.push([max.location, min.location]);
             localStorage.setItem("route" + count, [max.location, min.location]);
