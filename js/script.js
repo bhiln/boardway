@@ -76,7 +76,6 @@ function initialize() {
 
     var pathOptions = {
             path: [myLoc1, myEnd1],
-            strokeColor: #000000,
             map: map
         }
     polyline = new google.maps.Polyline(pathOptions);
