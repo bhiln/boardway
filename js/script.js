@@ -142,16 +142,7 @@ function plotElevation(results, status) {
         polyline = new google.maps.Polyline(pathOptions);
     }
 
-    // Display a polyline of the elevation path.
-    var pathOptions = {
-        path: elevationPath,
-        strokeColor: '#FFFFFF',
-        opacity: 1,
-        strokeWeight: 10,
-        map: map
-    }
-    //console.log(pathOptions);
-    polyline = new google.maps.Polyline(pathOptions);
+    
     // Extract the data from which to populate the chart.
     // Because the samples are equidistant, the 'Sample'
     // column here does double duty as distance along the
@@ -187,6 +178,17 @@ function plotElevation(results, status) {
         // },
         titleY: 'Elevation (m)'
     });
+
+    // Display a polyline of the elevation path.
+    var pathOptions = {
+        path: elevationPath,
+        strokeColor: '#FFFFFF',
+        opacity: 1,
+        strokeWeight: 10,
+        map: map
+    }
+    //console.log(pathOptions);
+    polyline = new google.maps.Polyline(pathOptions);
 }
 
 function calcRoute(start, end) {
