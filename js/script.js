@@ -74,7 +74,7 @@ function initialize() {
         mapTypeId: 'terrain'
     }
 
-    if(typeof(Storage) !== "undefined") {
+    //if(typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
     //     for (var key in localStorage)
     //     var routeName = "route" + count;
