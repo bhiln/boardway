@@ -76,14 +76,16 @@ function initialize() {
 
     if(typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
-        var tempRoute = 0;
-        var routeName;
+        var routeName = "route" + count;
+        var tempRoute = localStorage.getItem(routeName);
+        if (tempRoute !== null)
+                routes.push(tempRoute);
         while (tempRoute !== null) {
+            count++;
             routeName = "route" + count;
             tempRoute = localStorage.getItem(routeName);
             if (tempRoute !== null)
                 routes.push(tempRoute);
-            count++;
         } 
         console.log("WebStorage");
         console.log(routes);
