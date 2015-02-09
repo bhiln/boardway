@@ -19,8 +19,8 @@ var polylineArray = [];
 // Whitney, the highest point in the continental United
 // States to Badwater, Death Valley, the lowest point.
 
-var myLoc1;
-var myEnd1;
+var myLoc1 = new google.maps.LatLng(37.242740, -80.393901);
+var myEnd1 = new google.maps.LatLng(37.242584, -80.363977);
 var myLoc2;
 var myEnd2;
 
