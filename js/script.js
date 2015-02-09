@@ -76,6 +76,8 @@ function initialize() {
     if(typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
         var test = localStorage.getItem("lastname");
+        console.log("VAR TEST");
+        console.log(test);
     } else {
         // Sorry! No Web Storage support..
         console.log("No web storage support...");
