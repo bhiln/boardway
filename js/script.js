@@ -55,7 +55,7 @@ if (navigator.geolocation) {
 
     },
     function (error) {
-        //console.log("Something went wrong: ", error);
+        console.log("Something went wrong: ", error);
     }
     // {
     //     timeout: (5 * 1000),
