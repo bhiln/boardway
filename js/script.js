@@ -74,6 +74,13 @@ function initialize() {
     directionsDisplay.setMap(map);
     directionsDisplay.setPanel(document.getElementById("directionsPanel"));
 
+    var pathOptions = {
+            path: [myLoc1, myEnd1],
+            strokeColor: #000000,
+            map: map
+        }
+    polyline = new google.maps.Polyline(pathOptions);
+
 
     // Create an ElevationService.
     elevator = new google.maps.ElevationService();
