@@ -75,14 +75,6 @@ function initialize() {
     directionsDisplay.setMap(map);
     directionsDisplay.setPanel(document.getElementById("directionsPanel"));
 
-    var pathOptions = {
-            path: [myLoc1, myEnd1],
-            map: map
-        }
-    polyline = new google.maps.Polyline(pathOptions);
-    polylineArray.push(polyline);
-
-
     // Create an ElevationService.
     elevator = new google.maps.ElevationService();
 
