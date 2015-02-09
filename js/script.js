@@ -205,6 +205,11 @@ function calcRoute(start, end) {
         if (status == google.maps.DirectionsStatus.OK) {
             //for each (point in result.routes[0][)
             drawPath(result.routes[0].overview_path);
+
+            var rendererOptions = {
+                suppressPolylines: true
+            };
+            
             directionsDisplay.setDirections(result);
             showSteps(result);
             //console.log(result);
