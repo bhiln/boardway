@@ -12,6 +12,7 @@ var polyline;
 var max = 0;
 var min = 0;
 var markerArray = [];
+var polyline;
 
 // The following path marks a general path from Mt.
 // Whitney, the highest point in the continental United
