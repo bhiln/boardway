@@ -352,7 +352,7 @@ function getHill(loc) {
 
 
         if (localStorage.getItem([max.location, min.location]) == null)
-            localStorage.setItem([max.location, min.location], [max.location, min.location]);
+            localStorage.setItem([max.location, min.location], [max.location.D, max.location.k, min.location.D, min.location.k]);
         else
             console.log("ROUTE ALREADY EXISTS");
 
