@@ -11,6 +11,7 @@ var chart;
 var polyline;
 var max = 0;
 var min = 0;
+var markerArray = [];
 
 // The following path marks a general path from Mt.
 // Whitney, the highest point in the continental United
@@ -133,6 +134,8 @@ function plotElevation(results, status) {
     document.getElementById("elevation-max").textContent    = max;
     document.getElementById("elevation-min").textContent    = min;
 
+    polyline.setMap(null);
+
     // Display a polyline of the elevation path.
     for (var i = 0; i < elevations.length-1; i++){
         var pathOptions = {
@@ -213,6 +216,15 @@ function calcRoute(start, end) {
         destination: end,
         travelMode: google.maps.TravelMode.BICYCLING
     };
+
+    // First, remove any existing markers from the map.
+    for (var i = 0; i < markerArray.length; i++) {
+        markerArray[i].setMap(null);
+    }
+
+    // Now, clear the array itself.
+    markerArray = [];
+
     directionsService.route(request, function (result, status) {
         if (status == google.maps.DirectionsStatus.OK) {
             //for each (point in result.routes[0][)
@@ -241,7 +253,7 @@ function showSteps(directionResult) {
       map: map
     });
     attachInstructionText(marker, myRoute.steps[i].instructions);
-    //markerArray[i] = marker;
+    markerArray[i] = marker;
   }
 }
 
