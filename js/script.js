@@ -360,7 +360,7 @@ function getHill(loc) {
 
         //if ($.inArray([max, min], routes))
         console.log("CHECK ARRAY");
-        console.log($.inArray([max, min], routes));
+        console.log(routes.contains([max, min]));
         calcRoute(max.location, min.location);
     });
 
