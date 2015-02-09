@@ -97,7 +97,7 @@ function drawPath(path) {
     // }
 
     // Initiate the path request.
-    elevator.getElevationAlongPath(pathRequest, plotElevation);
+    elevator.getElevationAlongPath(pathRequest, plotElevation, drawWhitePath);
 }
 
 // Takes an array of ElevationResult objects, draws the path on the map
@@ -179,6 +179,10 @@ function plotElevation(results, status) {
         titleY: 'Elevation (m)'
     });
 
+    return elevationPath;
+}
+
+function drawWhitePath(elevationPath) {
     // Display a polyline of the elevation path.
     var pathOptions = {
         path: elevationPath,
