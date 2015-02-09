@@ -135,6 +135,7 @@ function plotElevation(results, status) {
             strokeColor: 'hsl(' + (50-(50-0)*((elevations[i].elevation-min)/(max-min))) + ',80%,50%)',
             opacity: 1,
             strokeWeight: 20,
+            geodesic: true,
             map: map
         }
         //console.log(pathOptions);
@@ -142,17 +143,15 @@ function plotElevation(results, status) {
     }
 
     // Display a polyline of the elevation path.
-    for (var i = 0; i < elevations.length-1; i++){
-        var pathOptions = {
-            path: [elevationPath[i], elevationPath[i+1]],
-            strokeColor: '#FFFFFF',
-            opacity: 1,
-            strokeWeight: 10,
-            map: map
-        }
-        //console.log(pathOptions);
-        polyline = new google.maps.Polyline(pathOptions);
+    var pathOptions = {
+        path: elevationPath,
+        strokeColor: '#FFFFFF',
+        opacity: 1,
+        strokeWeight: 10,
+        map: map
     }
+    //console.log(pathOptions);
+    polyline = new google.maps.Polyline(pathOptions);
     // Extract the data from which to populate the chart.
     // Because the samples are equidistant, the 'Sample'
     // column here does double duty as distance along the
