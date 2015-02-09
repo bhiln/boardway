@@ -66,7 +66,7 @@ if (navigator.geolocation) {
 }
 
 function initialize() {
-    var mapOptions = {,
+    var mapOptions = {
         center: myLoc1,
         mapTypeId: 'terrain'
     }
