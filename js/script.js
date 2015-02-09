@@ -88,7 +88,7 @@ function initialize() {
         for (var key in localStorage) {
             var tempLoc = localStorage.getItem(key);
             console.log("SAVED")
-            console.log(tempLoc[0]);
+            console.log(tempLoc[1]);
             //myLoc1 = new google.maps.LatLng(tempLoc[0].latitude, tempLoc[0].longitude);
         }
     } else {
