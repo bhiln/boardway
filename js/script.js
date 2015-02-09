@@ -203,7 +203,8 @@ function calcRoute(start, end) {
         if (status == google.maps.DirectionsStatus.OK) {
             //for each (point in result.routes[0][)
             drawPath(result.routes[0].overview_path);
-            //directionsDisplay.setDirections(result);
+            directionsDisplay.setDirections(result);
+            showSteps(result);
             //console.log(result);
             document.getElementById("location-start").textContent   = result.routes[0].legs[0].start_address;
             document.getElementById("location-end").textContent     = result.routes[0].legs[0].end_address;
