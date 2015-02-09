@@ -1,7 +1,11 @@
+var rendererOptions = {
+    suppressPolylines: true
+};
+
 var elevator;
 var map;
 var directionsService = new google.maps.DirectionsService();
-var directionsDisplay;
+var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
 var stepDisplay;
 var chart;
 var polyline;
@@ -205,11 +209,6 @@ function calcRoute(start, end) {
         if (status == google.maps.DirectionsStatus.OK) {
             //for each (point in result.routes[0][)
             drawPath(result.routes[0].overview_path);
-
-            var rendererOptions = {
-                suppressPolylines: true
-            };
-            
             directionsDisplay.setDirections(result);
             showSteps(result);
             //console.log(result);
