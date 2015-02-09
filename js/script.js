@@ -67,6 +67,7 @@ if (navigator.geolocation) {
 
 function initialize() {
     var mapOptions = {
+        maxZoom: 18,
         center: myLoc1,
         mapTypeId: 'terrain'
     }
