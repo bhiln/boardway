@@ -135,7 +135,7 @@ function plotElevation(results, status) {
     document.getElementById("elevation-max").textContent    = max;
     document.getElementById("elevation-min").textContent    = min;
 
-    for (var i = 0; i < polylineArray.length; i++) {
+    for (var i = 0; i <= polylineArray.length; i++) {
         polylineArray[i].setMap(null);
     }
     polylineArray = [];
@@ -224,7 +224,7 @@ function calcRoute(start, end) {
     };
 
     // First, remove any existing markers from the map.
-    for (var i = 0; i <= markerArray.length; i++) {
+    for (var i = 0; i < markerArray.length; i++) {
         markerArray[i].setMap(null);
     }
 
