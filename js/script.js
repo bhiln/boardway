@@ -75,9 +75,18 @@ function initialize() {
 
     if(typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
-        var test = localStorage.getItem("lastname");
-        console.log("VAR TEST");
-        console.log(test);
+        var tempRoute = 0;
+        var count = 0;
+        var routeName;
+        while (tempRoute !== null) {
+            routeName = "route" + count;
+            tempRoute = localStorage.getItem(routeName);
+            if (tempRoute !== null)
+                routes.push(tempRoute);
+            count++;
+        } 
+        console.log("WebStorage");
+        console.log(routes);
     } else {
         // Sorry! No Web Storage support..
         console.log("No web storage support...");
