@@ -15,6 +15,7 @@ var markerArray = [];
 var polyline;
 var polylineArray = [];
 var routes = [];
+var count = 0;
 
 // The following path marks a general path from Mt.
 // Whitney, the highest point in the continental United
@@ -76,7 +77,6 @@ function initialize() {
     if(typeof(Storage) !== "undefined") {
     // Code for localStorage/sessionStorage.
         var tempRoute = 0;
-        var count = 0;
         var routeName;
         while (tempRoute !== null) {
             routeName = "route" + count;
@@ -361,6 +361,7 @@ function getHill(loc) {
         if (routes.indexOf([max, min], 0) == -1) {
             console.log("adding new route: " + max + " " + min);
             routes.push([max, min]);
+            localStorage.setItem("route" + count, [max, min]);
         }
         else{
             console.log("ROUTE ALREADY EXISTS");
