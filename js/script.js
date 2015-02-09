@@ -74,27 +74,6 @@ function initialize() {
         mapTypeId: 'terrain'
     }
 
-    //if(typeof(Storage) !== "undefined") {
-    // Code for localStorage/sessionStorage.
-    //     for (var key in localStorage)
-    //     var routeName = "route" + count;
-    //     var tempRoute = localStorage.getItem(routeName);
-    //     if (tempRoute !== null)
-    //             routes.push(tempRoute);
-    //     while (tempRoute !== null) {
-    //         count++;
-    //         routeName = "route" + count;
-    //         tempRoute = localStorage.getItem(routeName);
-    //         if (tempRoute !== null)
-    //             routes.push(tempRoute);
-    //     } 
-    //     console.log("WebStorage");
-    //     console.log(routes);
-    // } else {
-    //     // Sorry! No Web Storage support..
-    //     console.log("No web storage support...");
-    // }
-
     map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
     directionsDisplay.setMap(map);
     directionsDisplay.setPanel(document.getElementById("directionsPanel"));
@@ -105,8 +84,18 @@ function initialize() {
     // Instantiate an info window to hold step text.
     stepDisplay = new google.maps.InfoWindow();
 
-    // Draw the path, using the Visualization API and the Elevation service.
-    //drawPath(myLoc1, myLoc1);
+    if(typeof(Storage) !== "undefined") {
+        for (var key in localStorage) {
+            var tempLoc = localStorage.getItem(key);
+            console.log("SAVED")
+            console.log(tempLoc);
+            //myLoc1 = new google.maps.LatLng(tempLoc[0].latitude, tempLoc[0].longitude);
+        }
+    } else {
+        // Sorry! No Web Storage support..
+        console.log("No web storage support...");
+    }
+
     getHill(myLoc1);
 }
 
