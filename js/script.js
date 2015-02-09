@@ -63,9 +63,6 @@ if (navigator.geolocation) {
 }
 
 function initialize() {
-
-    directionsDisplay = new google.maps.DirectionsRenderer();
-
     var mapOptions = {
         zoom: 8,
         center: myLoc1,
