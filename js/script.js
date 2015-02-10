@@ -105,6 +105,9 @@ function drawPath(path) {
     //chart = new google.visualization.ColumnChart(document.getElementById('elevation_chart'));
     chart = new google.visualization.LineChart(document.getElementById('elevation_chart'));
 
+    console.log("PATH");
+    console.log(path);
+
     // Create a PathElevationRequest object using this array.
     // Ask for 256 samples along that path.
     var pathRequest = {
