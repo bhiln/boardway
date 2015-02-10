@@ -125,6 +125,7 @@ function drawPath(path) {
 function plotElevation(results, status) {
 
     console.log("in plotElevation");
+    console.log(status);
     if (status != google.maps.ElevationStatus.OK) {
         return;
     }
