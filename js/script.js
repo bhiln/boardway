@@ -110,13 +110,8 @@ function drawPath(path) {
 
     // Create a PathElevationRequest object using this array.
     // Ask for 256 samples along that path.
-    var pathRequest1 = {
-        'path': path.slice(0,(path.length)/2),
-        'samples': path.length
-    }
-
-    var pathRequest2 = {
-        'path': path.slice(((path.length)/2)+1,path.length),
+    var pathRequest = {
+        'path': path,
         'samples': path.length
     }
 
@@ -125,8 +120,7 @@ function drawPath(path) {
     // }
 
     // Initiate the path request.
-    elevator.getElevationAlongPath(pathRequest1, plotElevation);
-    elevator.getElevationAlongPath(pathRequest2, plotElevation);
+    elevator.getElevationAlongPath(pathRequest, plotElevation);
 }
 
 // Takes an array of ElevationResult objects, draws the path on the map
