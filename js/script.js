@@ -250,7 +250,7 @@ function calcRoute(start, end) {
             drawPath(result.routes[0].overview_path);
             directionsDisplay.setDirections(result);
             showSteps(result);
-            //console.log(result);
+            console.log("Drawing map");
             document.getElementById("location-start").textContent   = result.routes[0].legs[0].start_address;
             document.getElementById("location-end").textContent     = result.routes[0].legs[0].end_address;
             document.getElementById("distance").textContent         = result.routes[0].legs[0].distance.text;
