@@ -117,7 +117,7 @@ function drawPath(path) {
 
     var pathRequest2 = {
         'path': path.slice(path.length/2, path.length),
-        'samples': path.length
+        'samples': path.length/2
     }
 
     // for each (point in path) {
