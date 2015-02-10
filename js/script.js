@@ -109,8 +109,7 @@ function drawPath(path) {
     // Ask for 256 samples along that path.
     var pathRequest = {
         'path': path,
-        'samples': path.length*2,
-        'key': 'AIzaSyBuzHR1Jvz5TW-Giy2mqlSl_3gEnxPAZFE'
+        'samples': path.length*2
     }
 
     // for each (point in path) {
@@ -331,8 +330,7 @@ function getHill(loc) {
 
     var pathRequest = {
         'path': latslongs,
-        'samples': latslongs.length*2,
-        'key': 'AIzaSyBuzHR1Jvz5TW-Giy2mqlSl_3gEnxPAZFE'
+        'samples': latslongs.length*2
     }
 
     // for each (point in path) {
