@@ -27,7 +27,7 @@ var myLoc2;
 var myEnd2;
 
 // Load the Visualization API and the columnchart package.
-google.load('visualization', '1', { packages: ['columnchart'] });
+//google.load('visualization', '1', { packages: ['columnchart'] });
 
 // Check to see if this browser supports geolocation.
 if (navigator.geolocation) {
