@@ -23,10 +23,6 @@
   bottom: 0;
 }
 
-.on("done", function(){
-    $(".cover").fadeOut(2000);
-});
-
 .pace.pace-inactive .pace-progress {
   display: none;
 }
