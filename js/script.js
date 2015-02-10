@@ -123,6 +123,8 @@ function drawPath(path) {
 // Takes an array of ElevationResult objects, draws the path on the map
 // and plots the elevation profile on a Visualization API ColumnChart.
 function plotElevation(results, status) {
+
+    console.log("in plotElevation");
     if (status != google.maps.ElevationStatus.OK) {
         return;
     }
