@@ -111,7 +111,7 @@ function drawPath(path) {
     // Create a PathElevationRequest object using this array.
     // Ask for 256 samples along that path.
     var pathRequest = {
-        'path': path,
+        'path': path.slice(0, path.lentgh/2),
         'samples': path.length
     }
 
