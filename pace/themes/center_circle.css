@@ -40,6 +40,7 @@
   font-size: 2rem;
   border-radius: 50%;
   background-image: url("../../img/logo1.png");
+  background-position: center;
   color: #fff;
   font-family: "Helvetica Neue", sans-serif;
   font-weight: 100;
