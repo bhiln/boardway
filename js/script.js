@@ -112,12 +112,12 @@ function drawPath(path) {
     // Ask for 256 samples along that path.
     var pathRequest1 = {
         'path': path.slice(0,(path.length)/2),
-        'samples': path.length*2
+        'samples': path.length
     }
 
     var pathRequest2 = {
         'path': path.slice((path.length)/2,path.length),
-        'samples': path.length*2
+        'samples': path.length
     }
 
     // for each (point in path) {
