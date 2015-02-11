@@ -98,20 +98,17 @@ function initialize() {
     }
 
     var markerImage = {
-        url: "../img/bw_pin.png",
-        // This marker is 20 pixels wide by 32 pixels tall.
-        size: new google.maps.Size(20, 32),
-        // The origin for this image is 0,0.
-        origin: new google.maps.Point(0,0),
-        // The anchor for this image is the base of the flagpole at 0,32.
-        anchor: new google.maps.Point(0, 32)
+        url: place.icon,
+        size: undefined,
+        origin: new google.maps.Point(0, 0),
+        anchor: new google.maps.Point(28, 18),
+        scaledSize: new google.maps.Size(28, 36)
     };
 
     curMarker = new google.maps.Marker({
         position: myCurLoc,
         map: map,
-        icon: new google.maps.MarkerImage( "../img/bw_pin.png" , undefined, undefined, undefined, new google.maps.Size(25, 32)),
-        animation: google.maps.Animation.DROP,
+        icon: markerImage,
         title:"You are here!"
     });
     google.maps.event.addListener(curMarker, 'click', toggleBounce);
