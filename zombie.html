@@ -35,7 +35,7 @@
     </div>
 
     <div id="first_pic">
-        <img src="img/loading_picture.png" alt="Waiting Longboarder" style="position:fixed; top:0px; left:0px; z-index:900; width:100%; overflow-y:hidden; overflow-x:hidden; margin:auto;">
+        <img id="loading_pic" src="img/loading_picture.png" alt="Waiting Longboarder" style="position:fixed; top:0px; left:0px; z-index:900; width:100%; overflow-y:hidden; overflow-x:hidden; margin:auto;">
     </div>
 
     <div id="cover" style="height:50vh;">
@@ -57,7 +57,7 @@
     <script>
 
     if (screen.width < screen.height) {
-        $('#first_pic').src="img/banner.png";
+        $('#loading_pic').src="img/banner.png";
     }
 
     Pace.on("done", function(){
