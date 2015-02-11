@@ -36,18 +36,20 @@
             <div id="elevation_chart"></div>
         </div>
 
-        <div class="route" style="height:50vh;">
-            <!-- <img src="img/streetview.png"> -->
-            <div class="route-data">
-                <h2><span id="location-start">[Start Location]</span> to <span id="location-end">[End Location]</h2>
-                <p class="data"><span id="distance">[Distance]</span></p>
-                <p class="data">&Delta; <span id="elevation-change">[Elevation Change]</span></p>
-                <p class="data">Max: <span id="elevation-max">[Max Elevation]</span>, Min: <span id="elevation-min">[Min Elevation]</span></p>
+        <div style="height:50vh;">
+            <div class="route">
+                <!-- <img src="img/streetview.png"> -->
+                <div class="route-data">
+                    <h2><span id="location-start">[Start Location]</span> to <span id="location-end">[End Location]</h2>
+                    <p class="data"><span id="distance">[Distance]</span></p>
+                    <p class="data">&Delta; <span id="elevation-change">[Elevation Change]</span></p>
+                    <p class="data">Max: <span id="elevation-max">[Max Elevation]</span>, Min: <span id="elevation-min">[Min Elevation]</span></p>
+                </div>
             </div>
-        </div>
 
-        <button onclick="calcRoute(myLoc1, myEnd1)">Route 1</button>
-        <button onclick="calcRoute(myLoc2, myEnd2)">Route 2</button>
+            <button onclick="calcRoute(myLoc1, myEnd1)">Route 1</button>
+            <button onclick="calcRoute(myLoc2, myEnd2)">Route 2</button>
+        </div>
     </div>
 
     <script>
