@@ -34,6 +34,10 @@
         <div id="map-canvas"></div>
     </div>
 
+    <div id="first_pic" style="height:50vh;">
+        <img src="img/waiting_longboard.jpg" alt="Waiting Longboarder">
+    </div>
+
     <div id="cover" style="display:none; height:50vh;">
         <div id="elevation_chart"></div>
         <div class="route">
@@ -52,6 +56,7 @@
 
     <script>
     Pace.on("done", function(){
+        $('#first_pic').fadeOut(1000);
         $('#cover').fadeIn(1000);
     });
     </script>
