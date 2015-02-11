@@ -110,10 +110,10 @@ function initialize() {
         position: myCurLoc,
         map: map,
         icon: "../img/bw_pin.png",
-        //animation: google.maps.Animation.DROP,
+        animation: google.maps.Animation.DROP,
         title:"You are here!"
     });
-    //google.maps.event.addListener(marker, 'click', toggleBounce);
+    google.maps.event.addListener(marker, 'click', toggleBounce);
 
     getHill(myCurLoc);
 }
