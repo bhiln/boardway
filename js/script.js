@@ -26,6 +26,17 @@ var myEnd1 = new google.maps.LatLng(37.242584, -80.363977);
 var myLoc2;
 var myEnd2;
 
+//set up loading screen
+console.log("width: " + $(window).width() + " height: " + $(window).height());
+if ($(window).width() < $(window).height()) {
+    document.getElementById("loading_pic").src="img/loading_picture_full_padding.png";
+}
+
+Pace.on("done", function(){
+    $('#first_pic').fadeOut(2000);
+    //$('#cover').fadeIn();
+});
+
 // Load the Visualization API and the columnchart package.
 google.load('visualization', '1', { packages: ['columnchart'] });
 
