@@ -55,16 +55,16 @@
     </div>
 
     <script>
-
-    if (screen.width < screen.height) {
         console.log("width: " + screen.width + " height: " + screen.height);
-        $('#loading_pic').src="img/banner.png";
-    }
+        if (screen.width < screen.height) {
 
-    Pace.on("done", function(){
-        $('#first_pic').fadeOut(2000);
-        //$('#cover').fadeIn();
-    });
+            $('#loading_pic').src="img/banner.png";
+        }
+
+        Pace.on("done", function(){
+            $('#first_pic').fadeOut(2000);
+            //$('#cover').fadeIn();
+        });
     </script>
 
 
