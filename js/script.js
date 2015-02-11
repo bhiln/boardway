@@ -29,10 +29,6 @@ var myEnd2;
 // Load the Visualization API and the columnchart package.
 google.load('visualization', '1', { packages: ['columnchart'] });
 
-Pace.on("done", function(){
-    console.log("NOW LOADED");
-});
-
 // Check to see if this browser supports geolocation.
 if (navigator.geolocation) {
     // This is the location marker that we will be using
