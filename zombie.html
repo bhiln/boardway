@@ -30,7 +30,7 @@
 
 <body>
 
-    <div class="cover" style="display: none;">
+    <div id="cover" style="display: none;">
         <div>
             <div id="map-canvas" style="height:500px;"></div>
             <div id="elevation_chart"></div>
@@ -52,7 +52,7 @@
 
     <script>
     Pace.on("done", function(){
-        $("cover").fadeIn(1000);
+        $('#cover').fadeIn(1000);
     });
     </script>
 
