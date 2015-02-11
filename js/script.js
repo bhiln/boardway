@@ -65,12 +65,6 @@ if (navigator.geolocation) {
         enableHighAccuracy: true
     }
     );
-
-    var marker = new google.maps.Marker({
-        position: myCurLoc,
-        map: map,
-        title:"You are here!"
-    });
 }
 
 function initialize() {
@@ -101,6 +95,12 @@ function initialize() {
         // Sorry! No Web Storage support..
         console.log("No web storage support...");
     }
+
+    var marker = new google.maps.Marker({
+        position: myCurLoc,
+        map: map,
+        title:"You are here!"
+    });
 
     getHill(myCurLoc);
 }
