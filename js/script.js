@@ -68,10 +68,7 @@ if (navigator.geolocation) {
 
     var myloc = new google.maps.Marker({
         clickable: false,
-        icon: new google.maps.MarkerImage('//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png',
-                                                        new google.maps.Size(22,22),
-                                                        new google.maps.Point(0,18),
-                                                        new google.maps.Point(11,11)),
+        icon: new google.maps.MarkerImage('//maps.gstatic.com/mapfiles/mobile/mobileimgs2.png', new google.maps.Size(22,22), new google.maps.Point(0,18), new google.maps.Point(11,11)),
         shadow: null,
         zIndex: 999,
         map: // your google.maps.Map object
