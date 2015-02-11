@@ -109,7 +109,7 @@ function initialize() {
     var marker = new google.maps.Marker({
         position: myCurLoc,
         map: map,
-        icon: markerImage,
+        icon: "../img/bw_pin.png",
         //animation: google.maps.Animation.DROP,
         title:"You are here!"
     });
