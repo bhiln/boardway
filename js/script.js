@@ -11,6 +11,7 @@ var chart;
 var polyline;
 var max = 0;
 var min = 0;
+var curMarker;
 var markerArray = [];
 var polyline;
 var polylineArray = [];
@@ -106,24 +107,24 @@ function initialize() {
         anchor: new google.maps.Point(0, 32)
     };
 
-    var marker = new google.maps.Marker({
+    curMarker = new google.maps.Marker({
         position: myCurLoc,
         map: map,
         icon: "../img/bw_pin.png",
         animation: google.maps.Animation.DROP,
         title:"You are here!"
     });
-    google.maps.event.addListener(marker, 'click', toggleBounce);
+    google.maps.event.addListener(curMarker, 'click', toggleBounce);
 
     getHill(myCurLoc);
 }
 
 function toggleBounce() {
 
-  if (marker.getAnimation() != null) {
-    marker.setAnimation(null);
+  if (curMarker.getAnimation() != null) {
+    curMarker.setAnimation(null);
   } else {
-    marker.setAnimation(google.maps.Animation.BOUNCE);
+    curMarker.setAnimation(google.maps.Animation.BOUNCE);
   }
 }
 
