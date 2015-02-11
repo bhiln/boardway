@@ -30,7 +30,7 @@ var myEnd2;
 google.load('visualization', '1', { packages: ['columnchart'] });
 
 Pace.on("done", function(){
-    document.getElementById('cover').fadeIn(2000);
+    console.log("NOW LOADED");
 });
 
 // Check to see if this browser supports geolocation.
