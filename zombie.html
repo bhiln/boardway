@@ -56,10 +56,10 @@
 
     <script>
 
-    if (window.innerWidth < window.innerHeight) {
+    if (window.width < window.height) {
         $('#first_pic').src="img/banner.png";
     }
-    
+
     Pace.on("done", function(){
         $('#first_pic').fadeOut(2000);
         //$('#cover').fadeIn();
