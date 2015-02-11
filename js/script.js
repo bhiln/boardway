@@ -33,16 +33,6 @@ Pace.on("done", function(){
     $(".cover").fadeOut(2000);
 });
 
-.cover {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 1999;
-    background:rgb(33,33,33);
-}
-
 // Check to see if this browser supports geolocation.
 if (navigator.geolocation) {
     // This is the location marker that we will be using
