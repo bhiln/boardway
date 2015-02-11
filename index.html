@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Boardway</title>
+
+    <script src="/pace/pace.min.js"></script>
+    <link href="/pace/themes/center_circle.css" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuzHR1Jvz5TW-Giy2mqlSl_3gEnxPAZFE"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-59543309-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+</head>
+
+<body>
+
+    <div>
+        <div id="map-canvas" style="height:500px;"></div>
+        <div id="elevation_chart"></div>
+    </div>
+
+    <div class="route">
+        <!-- <img src="img/streetview.png"> -->
+        <div class="route-data">
+            <h2><span id="location-start">[Start Location]</span> to <span id="location-end">[End Location]</h2>
+            <p class="data"><span id="distance">[Distance]</span></p>
+            <p class="data">&Delta; <span id="elevation-change">[Elevation Change]</span></p>
+            <p class="data">Max: <span id="elevation-max">[Max Elevation]</span>, Min: <span id="elevation-min">[Min Elevation]</span></p>
+        </div>
+    </div>
+
+    <button onclick="calcRoute(myLoc1, myEnd1)">Route 1</button>
+    <button onclick="calcRoute(myLoc2, myEnd2)">Route 2</button>
+
+</body>
+
+</html>
