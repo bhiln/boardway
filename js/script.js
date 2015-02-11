@@ -21,7 +21,7 @@ var count = 0;
 // Whitney, the highest point in the continental United
 // States to Badwater, Death Valley, the lowest point.
 
-var myLoc1 = new google.maps.LatLng(37.242740, -80.393901);
+var myCurLoc = new google.maps.LatLng(37.242740, -80.393901);
 var myEnd1 = new google.maps.LatLng(37.242584, -80.363977);
 var myLoc2;
 var myEnd2;
@@ -50,7 +50,7 @@ if (navigator.geolocation) {
         }
         // Log that this is the initial position.
         //console.log("Initial Position Found");
-        myLoc1 = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        myCurLoc = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         myEnd1 = new google.maps.LatLng(position.coords.latitude + 0.05, position.coords.longitude + 0.05);
         myLoc2 = new google.maps.LatLng(position.coords.latitude - 0.02, position.coords.longitude + 0.02);
         myEnd2 = new google.maps.LatLng(position.coords.latitude - 0.04, position.coords.longitude + 0.03);
@@ -67,7 +67,7 @@ if (navigator.geolocation) {
     );
 
     var marker = new google.maps.Marker({
-        position: myLoc1,
+        position: myCurLoc,
         map: map,
         title:"You are here!"
     });
@@ -76,7 +76,7 @@ if (navigator.geolocation) {
 function initialize() {
     var mapOptions = {
         maxZoom: 18,
-        center: myLoc1,
+        center: myCurLoc,
         mapTypeId: 'terrain'
     }
 
@@ -95,14 +95,14 @@ function initialize() {
             var tempLoc = localStorage.getItem(key);
             console.log("SAVED")
             console.log(tempLoc[1]);
-            //myLoc1 = new google.maps.LatLng(tempLoc[0].latitude, tempLoc[0].longitude);
+            //myCurLoc = new google.maps.LatLng(tempLoc[0].latitude, tempLoc[0].longitude);
         }
     } else {
         // Sorry! No Web Storage support..
         console.log("No web storage support...");
     }
 
-    getHill(myLoc1);
+    getHill(myCurLoc);
 }
 
 function drawPath(path) {
