@@ -101,8 +101,8 @@ function initialize() {
         url: "../img/bw_pin.png",
         size: undefined,
         origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(28, 18),
-        scaledSize: new google.maps.Size(28, 36)
+        anchor: new google.maps.Point(15, 40),
+        scaledSize: new google.maps.Size(30, 40)
     };
 
     curMarker = new google.maps.Marker({
