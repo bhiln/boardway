@@ -98,7 +98,7 @@ function initialize() {
     }
 
     var markerImage = {
-        url: place.icon,
+        url: "../img/bw_pin.png",
         size: undefined,
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(28, 18),
